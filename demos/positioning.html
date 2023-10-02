@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+        
+		<title>
+            Positioning
+        </title>
+        
+        <link rel="stylesheet" href="styles/positioning.css">
+    
+	</head>	
+	<body>
+
+        <div class="nav">
+            Here is a nav that will always be 0 pixels
+            from the top and 0 pixels from the left
+        </div>
+        
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        
+        <div>
+            <p class="absolute">
+                This is 300px from the top
+                and 200px from the left of the entire web page
+            </p>
+            
+            <p>
+                even though the container is all the way
+                down here. also this is text that has not been modified.
+            </p>
+            
+            <p class="relative">
+                Here's some text that's been offset relative to where it was normally going to be placed.
+            </p>
+            
+            <p>
+                but because that text was offset, now this text is positioned as if that other relatively offset text was never modified so it looks like there's a big hole above it
+            </p>        
+        </div>
+        
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        
+        <p>
+            here is some text to show that the page is really big for the sake of demoing other content
+        </p>
+        
+        <p class="float">
+            You can use float to force content that might not normally go onto the same line to be on the same line...if it fits
+        </p>
+        
+        <p class="float">
+            This p tag content won't go onto the previous line because there is too much to fit.
+        </p>
+        
+        <p class="float green">
+            But
+        </p>
+        
+        <p class="float">
+            this
+        </p>
+        
+        <p class="float orange">
+            will
+        </p>
+        
+
+        <p>
+            all of these floats are breaking this webpage!
+        </p>
+        
+        <br/>
+        
+        <p class="clear">
+            we can fix it by doing a clear
+        </p>
+        
+        
+        
+        <p class="float skinny">
+            If we modify the width though
+        </p>
+        
+        <p class="float skinny">
+            then the float might work again since we created space
+        </p>
+        
+        <p class="clear">
+            but it's overlappping...
+        </p>
+        
+        <p class="float skinny spaced">
+            We can fix that...
+        </p>
+        
+        <p class="float skinny spaced">
+            if we just add some margins to space everything out!
+        </p>
+        
+	</body>
+</html>
+

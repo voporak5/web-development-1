@@ -1,0 +1,35 @@
+body {
+    background-image: url('../images/background.png');
+}
+
+p {
+    color:white;
+    font-size:60px;
+    border-style: groove;
+}
+
+div {
+    border-style: groove;
+}
+
+div.centered {
+    text-align: center;
+}
+
+p.margin {
+    margin: 200px;
+    /*position: absolute;*/
+    /*left: 400px;*/
+    /*padding: 10px;*/
+}
+
+p.padding {
+    padding: 30px;
+}
+
+img.centered {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+

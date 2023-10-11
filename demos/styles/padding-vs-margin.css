@@ -24,7 +24,9 @@ p.margin {
 }
 
 p.padding {
-    padding: 30px;
+    /*padding: 30px;*/
+    height:600px;
+    padding-top: 600px;
 }
 
 img.centered {
@@ -33,3 +35,6 @@ img.centered {
     display: block;
 }
 
+img.block {
+    display: block;
+}

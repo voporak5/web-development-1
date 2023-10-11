@@ -47,6 +47,10 @@ p.float{
     float:left;
 }
 
+p.inline{
+    display:inline;
+}
+
 p.green{
     color:green;
 }

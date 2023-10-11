@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+        
+		<title>
+            Survey Reference Site
+        </title>
+    
+	</head>	
+	<body>
+        <form action="confirmation.html">
+            
+            <fieldset>
+                <legend>User</legend>
+                
+                <label for="first-name">First Name:</label>
+                <input type="text" id="first-name" name="first-name"/>
+                
+                <br>
+                <br>
+                
+                <label for="last-name">Last Name:</label>
+                <input type="text" id="last-name" name="last-name"/>
+                
+                <br>
+                <br>
+                
+                <label for="birth-date">Birth Date:</label>
+                <input type="date" id="birth-date" name="birth-date"/>
+                
+                <br>
+                <br>
+                
+                <label for="profile-photo">Profile Photo:</label>
+                <input type="file" id="profile-photo" name="profile-photo">
+                
+            </fieldset>
+            
+            <fieldset>
+                <legend>Contact</legend>
+                
+                <label for="email">
+                    Email: <br>
+                    <input type="email" id="email" name="email" required/>
+                </label>
+                
+                
+                <br>
+                <br>
+                
+                <label for="tel">
+                    Mobile Phone: <br>
+                    <!-- On mobile phones this will bring up the numberpad -->
+                    <input type="tel" id="tel" name="tel" required>
+                </label>
+                
+                
+            </fieldset>
+            
+            <fieldset>
+                <legend>About</legend>
+                
+                <label for="bio">
+                    Biography: <br>
+                    <textarea name="bio" id="bio" cols="100" rows="20" maxlength="2000">Enter up to 2000 characters...</textarea>
+                </label>
+                
+                <br>
+                <br>
+                
+                <label for="favorite-pet">Favorite Pet:</label>
+                <select name="favorite-pet">
+                    <option value="dogs">Dogs</option>
+                    <option value="cats">Cats</option>
+                    <option value="both">Both</option>
+                </select>
+                
+            </fieldset>
+            
+            <br>
+            
+            <input type="submit" name="submit" value="Delete">
+            <input type="submit" name="submit" value="Sign Up">
+            
+        </form>
+	</body>
+</html>
+

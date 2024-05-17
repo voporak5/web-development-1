@@ -1,0 +1,52 @@
+body {
+    background-color: #212529
+}
+
+div.card {
+    background-color: #212529;
+    border-color: white;
+}
+
+no-decoration {
+    text-decoration: none
+}
+
+h1 {
+    color: white
+}
+
+h2 {
+    color: white
+}
+
+h3 {
+    color: white
+}
+
+h4 {
+    color: white
+}
+
+h5 {
+    color: white
+}
+
+p {
+    color: white
+}
+
+hr {
+    color: white;
+}
+
+.list-group-mine .list-group-item {
+    background-color: #212529;
+    color: #ffffff;
+    border-top: 1px solid #0091b5;
+    border-left-color: #fff;
+    border-right-color: #fff;
+}
+
+.list-group-mine .list-group-item:hover {
+    background-color: aqua;
+}

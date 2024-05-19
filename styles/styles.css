@@ -31,11 +31,20 @@ h5 {
     color: white
 }
 
+h6 {
+    color: white
+}
+
+
 p {
     color: white
 }
 
 hr {
+    color: white;
+}
+
+pre {
     color: white;
 }
 

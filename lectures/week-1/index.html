@@ -14,11 +14,9 @@
 </head>
 
 <body class="container">
-
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
     <br>
 
     <h1 class="row justify-content-center">
@@ -56,7 +54,11 @@
             <li class="list-group-item">Quizzes (10%)</li>
             <li class="list-group-item">Midterm/Final Website Projects (40%)</li>
             <li class="list-group-item">Attendance/Participation (10%)</li>
-            <li class="list-group-item">Late Assignments Accepted Up To A week. 10% reduced score for each day late</li>
+            <li class="list-group-item">
+                Late Assignments Accepted Up To A week. 10% reduced score for each day late
+                <br>
+                &emsp;- Extensions will not be given so don't email me. I will ignore it without a reply
+            </li>
         </ul>
 
     </h5>
@@ -84,6 +86,7 @@
         &emsp;- Do homework
         <br>
         &emsp;&emsp;&emsp;It might take between 30 minutes to 3 hours depending on comfortability level
+        <br>
         &emsp;- Be on time
         <br>
         &emsp;&emsp;&emsp;Don't procrastinate and wait until the last second. I won't help you 4am the day
@@ -107,7 +110,19 @@
         <br>
         &emsp;&emsp;&emsp;The readings also serve as a reference for you as you build your sites.
         <br>
-
+        &emsp;- Seek out a tutor
+        <br>
+        &emsp;&emsp;&emsp;I only have so much availability so tutors will be your best bet for outside help.
+        <br>
+        &emsp;&emsp;&emsp;Reserve your tutoring sooner than later to guarantee a spot. They fill up fast.
+        <br>
+        &emsp;- Refer to the examples
+        <br>
+        &emsp;&emsp;&emsp;This website is your bible for the class. It has many examples that you can
+        <br>
+        &emsp;&emsp;&emsp;directly look at to see how things were done. You can view the page source
+        <br>
+        &emsp;&emsp;&emsp;or inspect the page to see the HTML and CSS to help you out
     </h4>
 
     <br>
@@ -250,6 +265,7 @@
                 </div>
             </div>
         </div>
+
         <!--Setup-->
         <div class="card">
             <div class="card-header" id="headingTwo">
@@ -389,5 +405,278 @@
                 </div>
             </div>
         </div>
+
+        <!--Additional Software-->
+        <div class="card">
+            <div class="card-header" id="headingFive">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive" style="text-decoration: none">
+                        <h3>
+                            Additional Software
+                        </h3>
+
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion" style="border-color:#ffffff">
+                <div class="card-body">
+                    <p>
+                        The above method for uploading files and edits is really intended for novices and shouldn't be used long term. I'm showing this way for class because it was too complicated explaining the software to everything last year.
+                        <br>
+                        <br>
+                        A better solution is to download software that allows you to upload your files without having to go to a website. You would essentially create a direction connection between the folder that your website is stored in on your computer and the repository (GitHub) that is stored remotely on a server.
+                        <br>
+                        <br>
+                        For those interested in this you can use <a href="https://desktop.github.com/" target="_blank">GitHub Desktop</a> which is installed throughout the IAM department, however I don't recommend that software. It's fairly simple to use, but it has its limitations that require extra configuration to bypass.
+                        <br>
+                        <br>
+                        Another popular choice is <a href="https://www.sourcetreeapp.com/" target="_blank">SourceTree</a> which also has its issues, but requires less config to use the main features of source control.
+                        <br>
+                        <br>
+                        <a href="https://www.gitkraken.com/" target="_blank">GitKraken</a> is also really popular and probably the easiest to use and setup.
+                        <br>
+                        <br>
+                        There are many other programs so feel free to do the research, but I don't plan on going over the software because it just creates too many questions that I don't want to deal with.
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
+    <br>
+
+    <hr>
+
+    <h2>
+        Web Development Basics
+    </h2>
+
+    <br>
+
+    <h4>
+        Anatomy of an HTML file
+    </h4>
+
+    <pre>
+&lt;!--This is a comment. Begin writing a comment with a lt sign, an ! and 2 hypens. End with 2 hypens and a gt sign --&gt;
+&lt;!--Everything in between will not be processed--&gt;
+&lt;!--
+    You can also enter line returns
+    and everything in between will still be ignored
+--&gt;
+        
+&lt;!--First specify the type of document using &lt;!doctype html&gt; --&gt;
+&lt;!--This helps the webpage process conistently across different web browsers--&gt;
+&lt;!doctype html&gt;
+        
+&lt;!--Then specify the language to help search engines correctly find your page--&gt;
+&lt;!--This also serves as the beginning of the main code you will write--&gt;
+&lt;html lang="en"&gt;
+    
+    &lt;!--Inside the html section we need to declare a section called head--&gt;
+    &lt;!--The head section is where we declare information about the website as--&gt;
+    &lt;!--well as load in external resources which we will look at in the future--&gt;
+    &lt;head&gt
+    
+        &lt;!--First declare how much data to allocate in the web browser (don't think about this too hard, just do it)--&gt;
+        &lt;meta charset="utf-8"&gt;
+        
+        &lt;!--Then declare how the content will scale--&gt;
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+        
+        &lt;!--Lastly name your page (this will appear on the tab of the web browser page. You can see this web page says Week 1)--&gt;
+        &lt;title&gt;Homepage&lt;/title&gt;
+        
+    &lt;!--Make sure to declare the end of the head section--&gt;
+    &lt;/head&gt
+
+    &lt;!--After the head section we then declare the body section--&gt;
+    &lt;!--All of the code representing the content of the web page will go inside of here--&gt;
+    &lt;body&gt;
+    
+        &lt;!--As an example we have the words Hello, world! inside of an h1 tag which makes it appear very large--&gt;
+        &lt;h1&gt;Hello, world!&lt;/h1&gt;
+        
+    &lt;!--This is where we say we are done writing content for the web page--&gt;
+    &lt;/body&gt;
+
+&lt;!--This is where we say we are done writing HTML--&gt;
+&lt;/html&gt;
+    </pre>
+
+    <br>
+    <h4>
+        Without the comments explaining the html code, the above code can be reduced
+        <br>
+        down to the below code snippet
+    </h4>
+    <pre>
+&lt;!doctype html&gt;
+&lt;html lang="en"&gt;   
+    &lt;head&gt
+    
+        &lt;meta charset="utf-8"&gt;       
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;        
+        &lt;title&gt;Homepage&lt;/title&gt;
+        
+    &lt;/head&gt
+
+    &lt;body&gt;
+    
+        &lt;h1&gt;Hello, world!&lt;/h1&gt;
+        
+    &lt;/body&gt;
+&lt;/html&gt;
+    </pre>
+
+    <br>
+    <h4>
+        Anatomy of an HTML tag
+    </h4>
+
+    <br>
+
+    <h5>
+        In order to begin building pages you have to get familiar with tags.
+        <br>
+        Tags are a way for you to define what you want to show on a web page.
+        <br>
+        You start with a &lt; sign, the name of the tag, and a &gt; sign. This is called the opening tag.
+        <br>
+        <br>
+        Then you enter your content.
+        <br>
+        <br>
+        Then you enter the a closing tag which is just like the opening tag but with a / like the below example.
+
+    </h5>
+
+    <pre>
+&lt;h1&gt;
+    Hello World
+&lt;/h1&gt;   
+    </pre>
+
+    <h5>
+        Not every tag requires a closing tag. The meta tag for instance just configure your
+        <br>
+        web page and does not apply any effect to content.
+    </h5>
+    <br>
+    <h4>
+        Text based tags
+    </h4>
+
+    <h5>
+        First we have h1-6 tags (heading) useful for creating headings that have standard sizes
+    </h5>
+
+    <h1>H1</h1>
+    <h2>H2</h2>
+    <h3>H3</h3>
+    <h4>H4</h4>
+    <h5>H5</h5>
+    <h6>H6</h6>
+    <br>
+    <pre>
+&lt;h1&gt;H1&lt;/h1&gt;
+&lt;h2&gt;H2&lt;/h2&gt;
+&lt;h3&gt;H3&lt;/h3&gt;
+&lt;h4&gt;H4&lt;/h4&gt;
+&lt;h5&gt;H5&lt;/h5&gt;
+&lt;h6&gt;H6&lt;/h6&gt;
+    </pre>
+
+    <h5>
+        Then we have the p tag for basic paragraph text
+    </h5>
+
+    <p>The p tag</p>
+    <pre>
+&lt;p&gt;The p tag&lt;/p&gt;
+    </pre>
+
+    <h5>
+        We can also bold, italicize, make superscript or even subscript
+    </h5>
+    <p>
+        <b>bold</b>
+        <i>italic</i>
+        <sup>superscript</sup>
+        <sub>subscript</sub>
+
+    </p>
+    <pre>
+&lt;b&gt;bold&lt;/b&gt;
+&lt;i&gt;italic&lt;/i&gt;
+&lt;sup&gt;superscript&lt;/sup&gt;
+&lt;sub&gt;subscript&lt;/sub&gt;
+    </pre>
+
+    <h4>
+        Formatting Tags
+    </h4>
+
+    <h5>
+        The web page will only recognize a single space so if want consecutive &emsp;&emsp;&emsp; spaces then you will need to use special character macros.
+        <br>
+        Additionally, you need to use the br tag for pushing content onto the next line.
+        <br>
+        The br tag is another example of a tag that does not require a closing tag.
+        <br>
+        <br>
+        1&nbsp;Space
+        <br>
+        2&ensp;Spaces
+        <br>
+        4&emsp;Spaces
+    </h5>
+    <pre>
+1&nbsp;Space
+&lt;br&gt;
+2&ensp;Spaces
+&lt;br&gt;
+4&emsp;Spaces
+    </pre>
+
+    <h4>
+        Basic Styles
+    </h4>
+
+    <h5 style="color:red; font-size:18px">
+        Additionally, you can change the <span style="font-size:36px">size</span> or <span style="color:green">color</span> of your text by inserting the style attribute into your tag or injecting a span tag into your content. Using the style attribute I changed the entire content of this section to be red with a size of 18px. With the span attribute I overwrote those changes to the word size and color.
+    </h5>
+
+    <pre>
+&lt;h5 style="color:red; font-size:18px"&gt;
+    Additionally, you can change the &lt;span style="font-size:36px"&gt;size&lt;/span&gt; or &lt;span style="color:green"&gt;color&lt;/span&gt; of your text by inserting the style attribute into your tag or injecting a span tag into your content. Using the style attribute I changed the entire content of this section to be red with a size of 18px. With the span attribute I overwrote those changes to the word size and color.
+&lt;/h5&gt;
+    </pre>
+
+    <h5>
+        There are many predefined colors <a href="https://www.w3.org/wiki/CSS/Properties/color/keywords" target="_blank">https://www.w3.org/wiki/CSS/Properties/color/keywords</a>
+        <br>
+        There are also many other styles <a href="https://www.w3.org/wiki/CSS/Properties" target="_blank">https://www.w3.org/wiki/CSS/Properties</a>
+    </h5>
+
+    <hr>
+
+    <h2>
+        Assignment 1
+    </h2>
+
+    <br>
+
+    <h4>
+        For this week's assignment you will simply take the index.html file that you had to upload to GitHub in the "Uploading New Files and File Edits" section and populate it with content. I want you to fill the web page with 600 words where the topic is "About Me". Don't write this for me. Write this for yourself and any potential visitors to your site. This could be future employers so be professional which includes quality grammar.
+        <br>
+        <br>
+        You should use the basic tags we covered today to make it look halfway decent. We'll start looking at how to make things colorful next week.
+        <br>
+        <br>
+        <a href="hw-1-example.html" target="_blank">Example</a>
+    </h4>
+
+
+
+
 </body></html>

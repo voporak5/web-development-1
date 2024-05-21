@@ -10,81 +10,25 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <link rel="stylesheet" href="../../styles/styles.css">
-
 </head>
 
 <body class="container">
 
-    <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body fixed-top" data-bs-theme="dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="../../index.html">Web Development I</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarScroll">
-                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../../index.html">Home</a>
-                    </li>
-                    <!--
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Weeks
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Week 1</a></li>
-                            <li><a class="dropdown-item" href="../week-2/index.html">Week 2</a></li>
-                            <li><a class="dropdown-item" href="../week-3/index.html">Week 3</a></li>
-                            <li><a class="dropdown-item" href="../week-4/index.html">Week 4</a></li>
-                            <li><a class="dropdown-item" href="../week-5/index.html">Week 5</a></li>
-                            <li><a class="dropdown-item" href="../week-6/index.html">Week 6</a></li>
-                            <li><a class="dropdown-item" href="../week-7/index.html">Week 7</a></li>
-                            <li><a class="dropdown-item" href="../week-8/index.html">Week 8</a></li>
-                            <li><a class="dropdown-item" href="../week-9/index.html">Week 9</a></li>
-                            <li><a class="dropdown-item" href="../week-10/index.html">Week 10</a></li>
-                            <li><a class="dropdown-item" href="../week-11/index.html">Week 11</a></li>
-                            <li><a class="dropdown-item" href="../week-12/index.html">Week 12</a></li>
-                            <li><a class="dropdown-item" href="../week-13/index.html">Week 13</a></li>
-                            <li><a class="dropdown-item" href="../week-14/index.html">Week 14</a></li>
-                            <li><a class="dropdown-item" href="../week-15/index.html">Week 15</a></li>
+    <div id="#nav"></div>
 
-                            <!--
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            -->
-                        </ul>
-                    </li>
-                    <!--
-                    <li class="nav-item">
-                        <a class="nav-link disabled" aria-disabled="true">Link</a>
-                    </li>
-                    -->
-                </ul>
-
-                <h2>
-                    Week 1
-                </h2>
-
-                <!--
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-                -->
-            </div>
-        </div>
-    </nav>
-
+    <script>
+        fetch('../nav.html')
+            .then(response => response.text())
+            .then(text => document.getElementById('#nav').innerHTML = text);
+    </script>
 
     <h1 class="row justify-content-center" style="padding-top: 100px;">
         Week 1
     </h1>
+
+    <h4 class="row justify-content-center">
+        Introductions and Basic HTML
+    </h4>
 
     <h2>
         Syllabus
@@ -737,6 +681,14 @@
         <br>
         <br>
         <a href="hw-1-example.html" target="_blank">Example</a>
+    </h4>
+
+    <h2>
+        Readings Due Next Week
+    </h2>
+
+    <h4>
+        Chapters 1,2,3,4 HTML & CSS Jon Duckett
     </h4>
 
 

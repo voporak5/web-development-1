@@ -40,6 +40,10 @@ p {
     color: white
 }
 
+figcaption {
+    color: white
+}
+
 hr {
     color: white;
 }
@@ -50,6 +54,42 @@ pre {
 
 ul {
     color: white;
+}
+
+dl {
+    color: white;
+}
+
+a.white:link {
+    color: white;
+}
+
+a.white:visited {
+    color: white;
+}
+
+a.white:active {
+    color: white;
+}
+
+a.white:hover {
+    color: white;
+}
+
+a:link {
+    color: #f95738;
+}
+
+a:visited {
+    color: #f95738;
+}
+
+a:active {
+    color: #f95738;
+}
+
+a:hover {
+    color: #adb5bd;
 }
 
 .list-group-mine .list-group-item {

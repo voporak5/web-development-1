@@ -20,7 +20,6 @@
         fetch('../nav.html')
             .then(response => response.text())
             .then(text => document.getElementById('#nav').innerHTML = text);
-
     </script>
 
     <h1 class="row justify-content-center" style="padding-top: 100px;">
@@ -28,7 +27,7 @@
     </h1>
 
     <h4 class="row justify-content-center">
-        Lists, Images, Tables, and Basic CSS
+        Links, Images, Lists, Tables, and Basic CSS
     </h4>
 
     <h2>
@@ -599,13 +598,217 @@
 
     <hr>
 
-    <h2>
-        Images, Lists, Tables
-    </h2>
+    <h2>Images</h2>
+
+
+    <h4>
+        Loading an image is easy. To do so we use the &lt;img&gt; tag.
+    </h4>
+
+    <img src="https://placehold.co/2x2" width=2px height=2px>
+    <img src="https://placehold.co/4x4" width=4px height=4px>
+    <img src="https://placehold.co/8x8" width=8px height=8px>
+    <img src="https://placehold.co/16x16" width=16px height=16px>
+    <img src="https://placehold.co/32x32" width=32px height=32px>
+    <img src="https://placehold.co/64x64" width=64px height=64px>
+    <img src="https://placehold.co/128x128" width=128px height=128px>
+    <img src="https://placehold.co/256x256" width=256px height=256px>
+    <img src="https://placehold.co/256x25b" width=256px height=256px alt="Missing image" style="color:white;">
+
+    <h4>
+        The &lt;img&gt; has several attributes to configure the image
+    </h4>
+
+    <pre class="border border-white">
+&lt;img src="https://placehold.co/128x128" width=128px height=128px alt="128x128 image"&gt;
+
+&lt;img src="https://placehold.co/128x128" width=128px height=128px alt="128x128 image"&gt;
+    </pre>
+
+    <h4>
+        <ul>
+            <li>src</li>
+            <ul>
+                <li>Location of the image that is being loaded</li>
+                <li>Can be relative or absolute (the above images are absolute and being loaded from another website)</li>
+                <ul>
+                    <li>They do take longer to load though and it would be more efficient to store them in the website files and load them with a relative path</li>
+                </ul>
+            </ul>
+            <li>height</li>
+            <ul>
+                <li>How tall the image should be</li>
+                <li>If you don't set this then the image will be whatever the actual image height is or scaled based on what you set for the width</li>
+            </ul>
+            <li>width</li>
+            <ul>
+                <li>How wide the image should be</li>
+                <li>If you don't set this then the image will be whatever the actual image width is or scaled based on what you set for the height</li>
+            </ul>
+            <li>alt</li>
+            <ul>
+                <li>Text that will show in the image area if the image fails to load (see the above example that says "Missing image")</li>
+            </ul>
+        </ul>
+
+        Be careful when setting width and height. What looks good on a smaller window might look terrible on a larger one.
+
+        <br>
+        <br>
+        <div class="row justify-content-center">
+            <div class="col-3">
+                <img src="img/large-photo-phone.png" width=100%>
+            </div>
+            <div class="col-6">
+                <img src="img/small-photo-monitor.png" width=100%>
+            </div>
+        </div>
+
+        <br>
+        We will look at how to handle this problem next week. If you change the size of the web browser you will see the above images correctly scaling up/down.
+        <br>
+        <br>
+        You can also add captions easily to your images by wrapping the image with the &lt;figure&gt; tag. To specify the caption you can wrap your text with the &lt;figcaption&gt; tag. This needs to be inside of the &lt;figure&gt; tag contents (See the below reference code).
+        <br>
+    </h4>
+
+    <figure>
+        <img src="https://placehold.co/256x256">
+        <figcaption>A placeholder image I grabbed</figcaption>
+    </figure>
+
+    <pre class="border border-white">
+&lt;figure&gt;
+    &lt;img src="https://placehold.co/256x256"&gt;
+    &lt;figcaption&gt;A placeholder image I grabbed&lt;/figcaption&gt;
+&lt;/figure&gt;
+    </pre>
+
+    <br>
+    <h4>
+        There's 1 problem with loading images and that is they can take a long time to load. However, we can pack them into a single image and load them all at once. We'll look at this next week but you can read more about it <a href="https://www.w3schools.com/css/css_image_sprites.asp" target="_blank">Here</a> if you are interested.
+    </h4>
+
+    <br>
+    <h2>Lists</h2>
+    <br>
+
+    <h4>
+        There are 3 types of lists we can create: ordered, unordered, and definition lists.
+
+        For ordered lists and unordered lists you can use the &lt;ol&gt; and &lt;ul&gt; tags respectively.
+        <br>
+        <br>
+        For any list item you want to add to either of those lists you can use the &lt;li&gt; tag.
+        <br>
+        <br>
+
+        <ol>
+            <li>This</li>
+            <li>Is</li>
+            <li>An</li>
+            <li>Ordered</li>
+            <li>List</li>
+
+            <ol>
+                <li>You can try putting lists inside of lists but it doesn't make a 5.1 correctly without some custom stuff...Try googling it!</li>
+            </ol>
+        </ol>
+    </h4>
+    <br>
+    <pre class="border border-white">
+&lt;ol&gt;
+    &lt;li&gt;This&lt;/li&gt;
+    &lt;li&gt;Is&lt;/li&gt;
+    &lt;li&gt;An&lt;/li&gt;
+    &lt;li&gt;Ordered&lt;/li&gt;
+    &lt;li&gt;List&lt;/li&gt;
+    &lt;ol&gt;
+        &lt;li&gt;You can try putting lists inside of lists but it doesn't make a 5.1 correctly without some custom stuff...Try googling it!&lt;/li&gt;
+    &lt;/ol&gt;
+&lt;/ol&gt;
+    </pre>
+    <h4>
+        <br>
+
+        <ul>
+            <li>This</li>
+            <li>Is</li>
+            <li>An</li>
+            <li>Unordered</li>
+            <li>List</li>
+            <ul>
+                <li>With unordered lists the nested lists will change their icon</li>
+                <ul>
+                    <li>3 times</li>
+                    <ul>
+                        <li>But not 4 without doing a custom icon</li>
+                    </ul>
+                    <ul style="list-style-type: disc;">
+                        <li>Like this!</li>
+                    </ul>
+                </ul>
+            </ul>
+        </ul>
+    </h4>
+    <br>
+    <pre class="border border-white">
+&lt;ul&gt;
+    &lt;li&gt;This&lt;/li&gt;
+    &lt;li&gt;Is&lt;/li&gt;
+    &lt;li&gt;An&lt;/li&gt;
+    &lt;li&gt;Unordered&lt;/li&gt;
+    &lt;li&gt;List&lt;/li&gt;
+    &lt;ul&gt;
+        &lt;li&gt;With unordered lists the nested lists will change their icon&lt;/li&gt;
+        &lt;ul&gt;
+            &lt;li&gt;3 times&lt;/li&gt;
+            &lt;ul&gt;
+                &lt;li&gt;But not 4 without doing a custom icon&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;ul style="list-style-type: disc;"&gt;
+                &lt;li&gt;Like this!&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/ul&gt;
+    &lt;/ul&gt;
+&lt;/ul&gt;
+    </pre>
 
     <br>
 
-    <h4>Images,lists,tables stuff</h4>
+    <h4>
+        Definition lists are intended to be used like dictionaries where you specify a word with a definition that is cleanly formatted. This requires wrapping your list with the &lt;dl&gt; tag (definition list) then for each term you wrap it with the &lt;dt&gt; tag and lastly for each definition...definition you wrap it with the &lt;dd&gt; tag
+    </h4>
+
+    <dl>
+        <dt>Lionel Richie</dt>
+        <dd>Hello, is it me you're looking for</dd>
+        <dt>Billie Eilish</dt>
+        <dd>I'm the Bad Guy...Duh!</dd>
+        <dt>Smash Mouth</dt>
+        <dd>Somebody once told the world is gonna roll me</dd>
+    </dl>
+
+    <pre class="border border-white">
+&lt;dl&gt;
+    &lt;dt&gt;Lionel Richie&lt;/dt&gt;
+    &lt;dd&gt;Hello, is it me you're looking for&lt;/dd&gt;
+    &lt;dt&gt;Billie Eilish&lt;/dt&gt;
+    &lt;dd&gt;I'm the Bad Guy...Duh!&lt;/dd&gt;
+    &lt;dt&gt;Smash Mouth&lt;/dt&gt;
+    &lt;dd&gt;Somebody once told the world is gonna roll me&lt;/dd&gt;
+&lt;/dl&gt;
+    </pre>
+
+    <br>
+
+    <h2>Tables</h2>
+
+    <h4>
+
+    </h4>
+
+    <br>
 
     <hr>
 
@@ -657,6 +860,4 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 
-</body>
-
-</html>
+</body></html>

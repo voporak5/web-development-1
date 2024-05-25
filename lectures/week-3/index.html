@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../../favicon.jpg">
+    <title>Week 3</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../../styles/styles.css">
+</head>
+
+<body class="container">
+
+    <div id="#nav"></div>
+
+    <script>
+        fetch('../nav.html')
+            .then(response => response.text())
+            .then(text => document.getElementById('#nav').innerHTML = text);
+
+    </script>
+
+    <h1 class="row justify-content-center" style="padding-top: 100px;">
+        Week 3
+    </h1>
+
+    <h4 class="row justify-content-center">
+        CSS
+    </h4>
+
+    <h2>
+        Agenda
+    </h2>
+
+    <ul class="list-group">
+        <li class="list-group-item">Review Homework and Issues</li>
+        <li class="list-group-item">Quiz 2</li>
+        <li class="list-group-item">Questions?</li>
+        <li class="list-group-item">CSS</li>
+        <li class="list-group-item">Questions?</li>
+        <li class="list-group-item">Class Time To Work</li>
+    </ul>
+
+
+    <br>
+
+    <hr>
+
+    <h2>
+        What is CSS?
+    </h2>
+
+    <h4>
+        Stands for Cascading Style Sheet. Reusuable styles (font, color, size changes, etc.). Up to this point, you've had to add the style attribute to every element you wanted to change.
+        <br>
+        <br>
+        On a large website (even small) this can be painful and tedious. Especially if you have many identical tags that have identical styles, it is a lot of copy and pasting.
+        <br>
+        <br>
+        Even worse, what if you have to change the style? You're left with having to go through the entire website to make the changes.
+        <br>
+        <br>
+        If we have elements that are just reusing the same style settings then we can extract those styles into a new type of file called a CSS file.
+        <br>
+        <br>
+        Instead of the file ending in ".html" the file will end in ".css".
+        <br>
+        <br>
+        If we need to make a change, then we just make the change to 1 place in our CSS file and the changes will "cascade" across our website.
+    </h4>
+
+    <br>
+
+    <hr>
+
+    <h2>
+        CSS vs HTML
+    </h2>
+
+    <table style="color: white; border: 2px solid #92D57C">
+        <tr style="background-color: #107C7C">
+            <th scope="col">HTML</th>
+            <th scope="col">CSS</th>
+
+        </tr>
+        <tr style="background-color: #3FAA85">
+            <td>HTML is intended to specify what the webpage is supposed to show.</td>
+            <td>CSS is intended to specify what it will look like.</td>
+        </tr>
+        <tr style="background-color: #234E5A">
+            <td>HTML is structured (head and body sections)</td>
+            <td>CSS is like the wild wild west. Just fill it up with all of your various styles</td>
+        </tr>
+        <tr style="background-color: #3FAA85">
+            <td>Uses an XML based markup system</td>
+            <td>Uses dot-notation, curly braces, colons, semicolons</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <br>
+
+    <h2>
+        Inline vs CSS
+    </h2>
+
+    <h4>
+        Consider the following inline style applied to a &lt;p&gt; tag
+    </h4>
+
+    <pre class="border border-white">
+&lt;p style="color:white; font-size:32px;&gt;
+    Hi 
+    My name is
+    What
+    My name is
+    Who
+    My name is
+    Chicka chicka Slim Shady
+&lt;/p&gt;
+    </pre>
+
+    <h4>
+        The CSS equivalent would look like this. (This goes inside the CSS file)
+    </h4>
+
+    <pre class="border border-white">
+p {
+    color: white;
+    font-size: 32px;
+}
+    </pre>
+
+    <h4>
+        They're pretty much the same except that with inline you use the style attribute and with CSS you just specify the tag you want to apply styles to and it will magically work... Almost. We need to load the styles in still
+    </h4>
+
+    <hr>
+
+    <h2>
+        Loading External CSS (From CSS file)
+    </h2>
+
+    <br>
+
+    <h4>
+        We use the link tag and add the rel attribute to specify what we're
+        trying to load.
+        <br>
+        <br>
+        We also specify the href attribute to specify
+        where the thing we're trying to load is located.
+        <br>
+        <br>
+        As before, you can specify an absolute link or a relative link to load
+        a CSS file that's stored on your website or somewhere else.
+        <br>
+        <br>
+        You should store your css files in a folder called styles.
+        For simplicity name your file styles.css as well.
+    </h4>
+    <br>
+    <pre class="border border-white">
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;My Website&lt;/title&gt;
+    
+    &lt;link rel="stylesheet" href="styles/styles.css"&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;p&gt;
+        Hi My name is, What My Name is, Who My Name is, Chicka chicka Slim Shady.
+    &lt;/p&gt;
+&lt;/body&gt;
+    </pre>
+
+    <br>
+
+    <hr>
+
+    <h2>
+        Loading Internal CSS (Without CSS file)
+    </h2>
+
+    <br>
+
+    <h4>
+        As an option you can write your CSS directly in your HTML file however, the CSS will only apply to that specific web page.
+        <br>
+        <br>
+        In order to do this you place the same CSS code inside of a &lt;style&gt; tag in the &lt;head&gt;
+    </h4>
+    <br>
+    <pre class="border border-white">
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;My Website&lt;/title&gt;
+    
+    &lt;style&gt;
+        p {
+            color: white;
+            font-size: 32px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;p&gt;
+        Hi My name is, What My Name is, Who My Name is, Chicka chicka Slim Shady.
+    &lt;/p&gt;
+&lt;/body&gt;
+    </pre>
+
+    <br>
+
+
+
+    <hr>
+
+    <h2>
+        Positioning Content
+    </h2>
+
+    <br>
+
+    <h4>
+        So far everything we've built is just added to the web page from the top left corner.
+        <br>
+        How do web pages make content not left justified?
+        <br>
+        <br>
+        Let's start by introducing the &lt;div&gt; tag.
+        <br>
+        The div is used to contain a group of elements.
+        <br>
+        <br>
+        In programming you use curly braces to contain multiple lines of code.
+        <br>
+        <br>
+        Without a &lt;div&gt; the webpage is essentially what is containing all of our code which is as big as we make it. If we just add some element such as &lt;p&gt;, the content will fill up the web page as much as possible unless we force it onto a new line using &lt;br&gt;.
+        <br>
+        <br>
+        Maybe we only want the
+        <br>
+        <br>
+        Consider the below code text. Maybe we only want it to take up a small portion of the screen.
+    </h4>
+
+    <p>Supercallifragilisticespialidocious Supercallifragilisticespialidocious Supercallifragilisticespialidocious Supercallifragilisticespialidocious Supercallifragilisticespialidocious Supercallifragilisticespialidocious Supercallifragilisticespialidocious</p>
+
+    <pre class="border border-white">
+&lt;p&gt;Supercallifragilisticespialidocious Supercallifragilisticespialidocious Supercallifragilisticespialidocious Supercallifragilisticespialidocious Supercallifragilisticespialidocious Supercallifragilisticespialidocious Supercallifragilisticespialidocious&lt;/p&gt;
+    </pre>
+
+    <h4>
+        We can wrap it with a div and change the size of the div to be smaller. The contents of the &lt;p&gt; will conform base on the size of the &lt;div&gt;.
+    </h4>
+    <div style="width: 25%">
+        <p>Supercallifragilisticespialidocious Supercallifragilisticespialidocious Supercallifragilisticespialidocious Supercallifragilisticespialidocious Supercallifragilisticespialidocious Supercallifragilisticespialidocious Supercallifragilisticespialidocious</p>
+    </div>
+
+    <pre class="border border-white">
+&lt;div style="width: 25%"&gt;
+    &lt;p&gt;Supercallifragilisticespialidocious Supercallifragilisticespialidocious Supercallifragilisticespialidocious Supercallifragilisticespialidocious Supercallifragilisticespialidocious Supercallifragilisticespialidocious Supercallifragilisticespialidocious&lt;/p&gt;
+&lt;/div&gt;
+    </pre>
+
+    <h4>
+        We could actually apply that same change to each element instead and forgo the &lt;div&gt; however, that would be more tedious and time consuming.
+    </h4>
+
+    <hr>
+
+    <h2>
+        Important Style Properties
+    </h2>
+
+    <h4>
+        Just like images, you can change the space that your contents covers by specifying width and height in your CSS.
+        <br>
+        <br>
+        The above div has it implemented as in inline style, but if you did it as external CSS then it would look like this.
+    </h4>
+
+    <pre class="border border-white">
+div {
+    width: 25%;
+}
+    </pre>
+
+    <h4>
+        In terms of values, you can specify exact units such as 25px or percentages such as 50%. If you specify a percentage then that would be 50% of the container's width. So, if we don't have any &lt;div&gt; tags on our web page and we set it to a width of 50%, then that would be 50% of our web page's width. If we created a &lt;div&gt; inside of that &lt;div&gt; and also set it to 50%, then that would be 50% of the parent &lt;div&gt; (which doing the math 50% of 50% is 25% of the screen width)
+        <br>
+        <br>
+        The next important style property for positioning content is margin.
+        <br>
+        Margins are the spacing between elements. You can specify margins on all 4 sides of an element.
+        <br>
+        The below example sets the space between the left and right edge of the parent containers to be 25% of the width respectively making the total container width 50% wide and because of the spacing on the left and right it appears centered.
+    </h4>
+
+    <p style="margin-left: 25%;margin-right: 25%; background-color: orangered;">
+        Here is some text
+    </p>
+
+    <pre class="border border-white">
+&lt;p style="margin-left: 25%;margin-right: 25%; background-color: orangered;"&gt;
+    Here is some text
+&lt;/p&gt;
+    </pre>
+
+
+    <h4>
+        Look what happens when we only set the left margin.
+    </h4>
+
+    <p style="margin-left: 25%; background-color: orangered;">
+        Here is some text
+    </p>
+
+    <pre class="border border-white">
+&lt;p style="margin-left: 25%; background-color: orangered;"&gt;
+    Here is some text
+&lt;/p&gt;
+    </pre>
+
+    <h4>
+        Look what happens when we only set the right margin.
+    </h4>
+
+    <p style="margin-right: 25%; background-color: orangered;">
+        Here is some text
+    </p>
+
+    <pre class="border border-white">
+&lt;p style="margin-right: 25%; background-color: orangered;"&gt;
+    Here is some text
+&lt;/p&gt;
+    </pre>
+
+    <h4>
+        Of course, the actual text is not centered inside of the container so we can specify the text-align property to fix that.
+    </h4>
+
+    <p style="text-align: center; background-color: orangered;">
+        Here is some text
+    </p>
+
+    <pre class="border border-white">
+&lt;p style="text-align: center; background-color: orangered;"&gt;
+    Here is some text
+&lt;/p&gt;
+    </pre>
+
+    <h4>
+        Maybe we want it centered and we want the positioning of the text to only be 50.
+    </h4>
+
+    <p style="text-align: center; margin-left: 25%;margin-right: 25%; background-color: orangered;">
+        Here is some text
+    </p>
+
+    <pre class="border border-white">
+&lt;p style="text-align: center; margin-left: 25%;margin-right: 25%; background-color: orangered;"&gt;
+    Here is some text
+&lt;/p&gt;
+    </pre>
+
+    <h4>
+        Don't be mislead by the name of the property text-align. It isn't intended to be exclusively used with text. We can use it on anything such as images. However, we need to wrap the image in a div and apply the property to the div. text-align only works if the element you are applying the style to is wide enough. Applying it directly to an image won't work because the element width and height is exactly what is specified. The &lt;p&gt; tag takes up the full width of the container that it exists in as a default.
+    </h4>
+
+    <div style="text-align: center">
+        <img src="img/gow.jpg">
+    </div>
+
+    <pre class="border border-white">
+&lt;div style="text-align: center"&gt;
+    &lt;img src="img/gow.jpg"&gt;
+&lt;/div&gt;
+    </pre>
+
+    <h4>
+        Without the div, we would need to use margins and play with the width. We don't know what percentage of width the image is, but we can force it to be a percentage and just calculate the difference in margins. So if the image is 30% of the width of the screen we can make the margins left/right be 35% each. (30 + 35 + 35 = 100 )
+    </h4>
+
+    <img src="img/gow.jpg" style="margin-left: 35%; margin-right: 35%" width="30%">
+
+    <pre class="border border-white">
+&lt;img src="img/gow.jpg" style="margin-left: 35%; margin-right: 35%" width="30%"&gt;
+    </pre>
+
+    <br>
+
+    <h4>
+        You can specify the margins of each side all at once in your style or you can specify them individually. It is up to you.
+    </h4>
+
+    <pre class="border border-white">
+img {
+    margin-top: 10px;
+    margin-right: 25%;
+    margin-bottom: 10px;
+    margin-left: 25%;
+}
+    </pre>
+
+    <h4>
+        If you specify it all at once then the order is top, right, bottom, left.
+    </h4>
+
+
+    <pre class="border border-white">
+img {
+    margin: 10px 25% 10px 25%;
+}
+    </pre>
+
+    <h4>
+        What about putting multiple elements in the same row?
+        <br>
+        Since the size of the image conforms to the actual image then images do this naturally.
+    </h4>
+
+    <img src="https://placehold.co/128x128" width=128px height=128px>
+    <img src="https://placehold.co/128x128" width=128px height=128px>
+    <img src="https://placehold.co/128x128" width=128px height=128px>
+
+    <br>
+    <br>
+
+    <h4>
+        &lt;p&gt; tags on the other hand fill up the entire width so we can free up the unused space for other elements by changing the display style by setting it to inline
+    </h4>
+
+    <br>
+    <br>
+    <p style="display: inline">dfdf</p>
+    <img src="https://placehold.co/128x128" width=128px height=128px>
+
+    <pre class="border border-white">
+&lt;p style="display: inline"&gt;dfdf&lt;/p&gt;
+&lt;img src="https://placehold.co/128x128" width=128px height=128px&gt;
+    </pre>
+
+    <br>
+    <br>
+    <img src="https://placehold.co/128x128" width=128px height=128px style="display: inline">
+    <p style="display: inline">dfdf</p>
+    <pre class="border border-white">
+&lt;img src="https://placehold.co/128x128" width=128px height=128px&gt;
+&lt;p style="display: inline"&gt;dfdf&lt;/p&gt;
+    </pre>
+    <h4>
+        There are more options so please read pages 317-318.
+        <br>
+        There are other fancy styles such as border images and box shadows so read pages 319-322.
+        <br>
+        These things can be hard to understand, so just ogogle it for more examples. You will really need to experiment.
+    </h4>
+    <hr>
+
+    <h2>
+        Assignment 3
+    </h2>
+
+    <br>
+
+    <h4>
+        For this week's assignment modify your website to move away from inline styles to external CSS.
+        <br>
+        <br>
+        Every page should be loading the styles from a CSS file now.
+        <br>
+        <br>
+        Improve the formatting of your content. Make elements centered, spaced, etc. Make it feel like a real website.
+        <br>
+        <br>
+        Additionally, add a new web page based. For this new web page you will be creating <a href="https://artsandculture.google.com/asset/composition-with-red-blue-and-yellow/5QG2Fm_LGUWAHA" target="_blank">Mondrian Art</a>
+        <br>
+        Make me a work of art!
+        <br>
+        <br>
+        The below example probably reflects barely a 50% grade since the main website that isn't the Mondrian Art doesn't have any formatting or styles applied..
+        <br>
+        <br>
+        <a href=" hw/index.html" target="_blank">Example</a>
+    </h4>
+    <br>
+
+    <h2>
+        Readings Due Next Week
+    </h2>
+
+    <hr>
+    <h4>
+        Chapters 10, 13, 15 (375-376) HTML & CSS Jon Duckett
+    </h4>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

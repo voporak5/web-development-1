@@ -1,0 +1,31 @@
+div.padding-left {
+    margin-left: 20px;
+}
+
+div.padding-top {
+    margin-top: 20px;
+}
+
+div.black {
+    background-color: black;
+}
+
+div.red {
+    background-color: red;
+}
+
+div.blue {
+    background-color: blue;
+}
+
+div.green {
+    background-color: green;
+}
+
+div.yellow {
+    background-color: yellow;
+}
+
+div.orange {
+    background-color: orange;
+}

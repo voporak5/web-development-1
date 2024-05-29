@@ -20,7 +20,6 @@
         fetch('../nav.html')
             .then(response => response.text())
             .then(text => document.getElementById('#nav').innerHTML = text);
-
     </script>
 
     <h1 class="row justify-content-center" style="padding-top: 100px;">
@@ -596,6 +595,48 @@
     </pre>
 
     <br>
+
+    <h4>
+        Inline VS Block Elements
+    </h4>
+
+    <h5>
+        You might be wondering how does the web page handle HTML?
+        <br>
+        Basically, the web page processes content from the top of the file to the bottom and adds (draws) whatever you specify in that order.
+        <br>
+        <br>
+        Some elements will be pushed to the next line such as text, tables, and forms.
+        <br>
+        These kinds of elements are displayed at the "Block-level"
+        <br>
+        <br>
+        <img src="img/block.png" width="100%">
+        <br>
+        <br>
+        The content at the top although it only represents around 50% of the width of the page actually covers 100%. (Open browser and show in the inspector
+        <br>
+        <br>
+        So if you keep adding those types elements hoping to place them in a row then you will need to do more work that we will cover in the future.
+        <br>
+        <br>
+        On the other hand, there are tags that will not take the full width and placing consecutive elements will correctly display in a row.
+        <br>
+        <br>
+        These are displayed at the "Inline Level"
+        <br>
+        <br>
+        <div style="text-align: center">
+            <img src="https://placehold.co/256x256" width=256px height=256px>
+            <img src="https://placehold.co/256x256" width=256px height=256px>
+            <img src="https://placehold.co/256x256" width=256px height=256px>
+        </div>
+        <br>
+        For a list of tags that are Block-level vs Inline go <a href="https://www.w3schools.com/html/html_blocks.asp">here</a>
+
+    </h5>
+
+    <br>
     <h4>
         Text based tags
     </h4>
@@ -737,6 +778,4 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 
-</body>
-
-</html>
+</body></html>

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="../../favicon.jpg">
-    <title>Week 3</title>
+    <title>Week 4</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
@@ -23,11 +23,11 @@
     </script>
 
     <h1 class="row justify-content-center" style="padding-top: 100px;">
-        Week 3
+        Week 4
     </h1>
 
     <h4 class="row justify-content-center">
-        CSS
+        Lorem Ipsum, Colors, Fonts, Advanced CSS I
     </h4>
 
     <h2>
@@ -36,8 +36,9 @@
 
     <ul class="list-group">
         <li class="list-group-item">Review Homework and Issues</li>
-        <li class="list-group-item">Quiz 2</li>
+        <li class="list-group-item">Quiz 3</li>
         <li class="list-group-item">Questions?</li>
+        <li class="list-group-item">Lorem Ipsum</li>
         <li class="list-group-item">CSS</li>
         <li class="list-group-item">Questions?</li>
         <li class="list-group-item">Class Time To Work</li>
@@ -49,26 +50,23 @@
     <hr>
 
     <h2>
-        What is CSS?
+        What is Lorem Ipsum?
     </h2>
 
     <h4>
-        Stands for Cascading Style Sheet. Reusuable styles (font, color, size changes, etc.). Up to this point, you've had to add the style attribute to every element you wanted to change.
+        Point blank, it's placeholder text and it looks like this.
         <br>
         <br>
-        On a large website (even small) this can be painful and tedious. Especially if you have many identical tags that have identical styles, it is a lot of copy and pasting.
+        <span style="color: cornflowerblue">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span>
         <br>
         <br>
-        Even worse, what if you have to change the style? You're left with having to go through the entire website to make the changes.
+        At first glance it looks like legitimate text however, it's literal gibberish.
         <br>
         <br>
-        If we have elements that are just reusing the same style settings then we can extract those styles into a new type of file called a CSS file.
+        The intent is to give an idea what the site will look like when it has actual content in it. You could copy and paste something a bunch, but that might not give the best reflection given the same series of characters would have the same allocation and space which isn't as good as something that's random yet feels real.
         <br>
         <br>
-        Instead of the file ending in ".html" the file will end in ".css".
-        <br>
-        <br>
-        If we need to make a change, then we just make the change to 1 place in our CSS file and the changes will "cascade" across our website.
+        If you want to get creative though, there are some fun generators out there. My personal favorite being the <a href="https://slipsum.com/" target="_blank">Samuel L. Ipsum</a> generator. Check out Handy Links on the homepage for a link to a list of other fun generators.
     </h4>
 
     <br>
@@ -76,67 +74,202 @@
     <hr>
 
     <h2>
-        CSS vs HTML
-    </h2>
-
-    <table style="color: white; border: 2px solid #92D57C">
-        <tr style="background-color: #107C7C">
-            <th scope="col">HTML</th>
-            <th scope="col">CSS</th>
-
-        </tr>
-        <tr style="background-color: #3FAA85">
-            <td>HTML is intended to specify what the webpage is supposed to show.</td>
-            <td>CSS is intended to specify what it will look like.</td>
-        </tr>
-        <tr style="background-color: #234E5A">
-            <td>HTML is structured (head and body sections)</td>
-            <td>CSS is like the wild wild west. Just fill it up with all of your various styles</td>
-        </tr>
-        <tr style="background-color: #3FAA85">
-            <td>Uses an XML based markup system</td>
-            <td>Uses dot-notation, curly braces, colons, semicolons</td>
-        </tr>
-    </table>
-
-    <hr>
-
-    <br>
-
-    <h2>
-        Inline vs CSS
+        Color
     </h2>
 
     <h4>
-        Consider the following inline style applied to a &lt;p&gt; tag
+        Up until now we have only talked about pre-defined colors (aqua, smoke white, white, earth green, etc.) however, there are many many more (16 million+ that computer can show).
+        <br>
+        <br>
+        Here are common color setting methods.
+
     </h4>
 
-    <pre class="border border-white">
-&lt;p style="color:white; font-size:32px;&gt;
-    Hi 
-    My name is
-    What
-    My name is
-    Who
-    My name is
-    Chicka chicka Slim Shady
-&lt;/p&gt;
-    </pre>
+    <div id="accordion">
 
-    <h4>
-        The CSS equivalent would look like this. (This goes inside the CSS file)
-    </h4>
+        <!--What Is It?-->
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" style="text-decoration: none">
+                        <h3>
+                            RGB
+                        </h3>
 
-    <pre class="border border-white">
+                    </button>
+                </h5>
+            </div>
+
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                    <p>
+                        Red, Green, Blue (255, 128, 36)
+                        <br>
+                        Sometimes RGBA where the A is alpha and looks like this (255, 128, 36, 255)
+                        <br>
+                        <br>
+                        If you want to change the alpha then you need to specify the opacity which is a value that ranges from 0-1 where 0 is transparent and 1 is completely opaque. You ocan also do a percentage from 0% to 100%.
+                    </p>
+
+                    <pre class="border border-white">
 p {
-    color: white;
-    font-size: 32px;
+    color: rgb(255, 128, 36);
+    opacity: 0.5;
 }
+                    </pre>
+
+                </div>
+            </div>
+        </div>
+
+        <!--Setup-->
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="text-decoration: none">
+                        <h3>
+                            CMYK
+                        </h3>
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="card-body">
+                    <p>
+                        Cyan Magenta Yellow Key
+                        <br>
+                        It's for printing, not computers. If you see this option in illustrator when you make an image, don't select it.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!--Uploading New Files-->
+        <div class="card">
+            <div class="card-header" id="headingThree">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="text-decoration: none">
+                        <h3>
+                            Hex Code
+                        </h3>
+
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                <div class="card-body">
+                    <p>
+                        It's still RGB/RGBA however it looks like this #ff8024ff which is the base 16 equivalent of (255, 128, 36, 255).
+                        <br>
+                        <br>
+                        Programmers might want to type 0xff8024. Websites do not like this. You need to use the # symbol.
+                        <br>
+                        <br>
+                        If you want to change the alpha then you need to specify the opacity which is a value that ranges from 0-1 where 0 is transparent and 1 is completely opaque. You ocan also do a percentage from 0% to 100%.
+                    </p>
+
+                    <pre class="border border-white">
+p {
+    color: #ff8024;
+    opacity: 50%;
+}
+                    </pre>
+
+                </div>
+            </div>
+        </div>
+
+        <!--Publishing Website-->
+        <div class="card">
+            <div class="card-header" id="headingFour">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" style="text-decoration: none">
+                        <h3>
+                            HSLA
+                        </h3>
+
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion" style="border-color:#ffffff">
+                <div class="card-body">
+                    <p>
+                        Hue, Saturation, Lightness, Alpha.
+                        <br>
+                        <br>
+                        I have no idea how to figure out what color to make based on this method. You'd need to do research if you decided to use it but the most common methods are hex or pre-defined colors.
+                        <br>
+                        <br>
+                        A benefit of this method is that you do not need the opacity property to set transparency. The 4th value represents alpha.
+                    </p>
+
+                    <pre class="border border-white">
+p {
+    color: hsl(0, 100%, 50%, 100%);
+}
+                    </pre>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <hr>
+
+    <br>
+
+    <h2>
+        Changing Fonts
+    </h2>
+
+    <h4 style="font-family: cursive">
+        Changing fonts is easy with the font-family property
+    </h4>
+
+    <pre class="border border-white">
+&lt;h4 style="font-family: cursive"&gt;
+    Changing fonts is easy with the font-family property
+&lt;/h4&gt;
+    </pre>
+
+    <h4 style="font-family: 'Times'">
+        You can specify the font value in quotes or not
+    </h4>
+
+    <pre class="border border-white">
+&lt;h4 style="font-family: 'Times'"&gt;
+    You can specify the font value in quotes or not
+&lt;/h4&gt;
+    </pre>
+
+    <h4 style="font-family: Verdana, Times, 'Courier New'">
+        And you can specify many different fonts in the event of one of the fonts failing to load
+    </h4>
+
+    <pre class="border border-white">
+&lt;h4 style="font-family: Verdana, Times, 'Courier New'"&gt;
+    And you can specify many different fonts in the event of one of the fonts failing to load
+&lt;/h4&gt;
     </pre>
 
     <h4>
-        They're pretty much the same except that with inline you use the style attribute and with CSS you just specify the tag you want to apply styles to and it will magically work... Almost. We need to load the styles in still
+        You don't need quotes however, it is recommended if the font name has special characters such as $ , ! or /
+        <br>
+        <br>
+        It's also good practice to end the list of fallback fonts with something generic (pages 269-270 of HTML & CSS Jon Duckett)
+        <br>
+        <br>
+        Why do you need fallback fonts though? Won't they all work?
+        <br>
+        <br>
+        Not if... A. the font isn't installed by the user, but also because of B. not every font works on every web browser!
     </h4>
+
+    <img src="img/fonts.png" width="100%">
+
+    <br>
+    <br>
 
     <hr>
 
@@ -357,7 +490,7 @@ div {
     </pre>
 
     <h4>
-        Maybe we want the text centered and there to be 25% margins on the left and right sides.
+        Maybe we want it centered and we want the positioning of the text to only be 50.
     </h4>
 
     <p style="text-align: center; margin-left: 25%;margin-right: 25%; background-color: orangered;">
@@ -371,14 +504,8 @@ div {
     </pre>
 
     <h4>
-        Don't be misled by the name of the property text-align. It isn't intended to be exclusively used with text. We can use it on anything such as images. However, we need to wrap the image in a div and apply the property to the div. text-align only works if the element you are applying the style to is wide enough. Applying it directly to an image won't work because the element width and height is exactly what is specified. The &lt;p&gt; tag takes up the full width of the container that it exists in as a default.
+        Don't be mislead by the name of the property text-align. It isn't intended to be exclusively used with text. We can use it on anything such as images. However, we need to wrap the image in a div and apply the property to the div. text-align only works if the element you are applying the style to is wide enough. Applying it directly to an image won't work because the element width and height is exactly what is specified. The &lt;p&gt; tag takes up the full width of the container that it exists in as a default.
     </h4>
-
-    <img src="img/gow.jpg" style="text-align: center">
-
-    <pre class="border border-white">
-&lt;img src="img/gow.jpg" style="text-align: center"&gt;
-    </pre>
 
     <div style="text-align: center">
         <img src="img/gow.jpg">
@@ -493,9 +620,6 @@ img {
         <br>
         <br>
         The below example probably reflects a 50% grade. If you do the above requirements and improve your other pages and move to CSS then that will get you another 25%. If you make your Mondrian art more fancy then that'll get you the rest of the points. My example is basic and only has 6 boxes. Aim for 12.
-        <br>
-        <br>
-        Also, I will allow you to use inline styles to set the color of the divs because we haven't talked about how to have different style sets for the same tag.
         <br>
         <br>
         <a href=" hw/index.html" target="_blank">Example</a>

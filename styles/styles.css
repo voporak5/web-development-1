@@ -27,6 +27,39 @@ h4 {
     color: white
 }
 
+h4.red {
+    color: indianred
+}
+
+h4.green {
+    color: greenyellow
+}
+
+h4.blue {
+    color: cornflowerblue
+}
+
+h4.left {
+    text-align: left
+}
+
+h4.center {
+    text-align: center
+}
+
+h4.right {
+    text-align: right
+}
+
+
+.orange {
+    color: darkorange
+}
+
+.right-justified {
+    text-align: right
+}
+
 h5 {
     color: white
 }
@@ -90,6 +123,14 @@ a:active {
 
 a:hover {
     color: #adb5bd;
+}
+
+img.fun {
+    content: url("../images/present.png");
+}
+
+img.fun:hover {
+    content: url("../images/cat.png");
 }
 
 .list-group-mine .list-group-item {

@@ -1,0 +1,690 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../../favicon.jpg">
+    <title>Week 5</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../../styles/styles.css">
+</head>
+
+<body class="container">
+
+    <div id="#nav"></div>
+
+    <script>
+        fetch('../nav.html')
+            .then(response => response.text())
+            .then(text => document.getElementById('#nav').innerHTML = text);
+    </script>
+
+    <h1 class="row justify-content-center" style="padding-top: 100px;">
+        Week 5
+    </h1>
+
+    <h4 class="row justify-content-center">
+        Advanced CSS II, Animations
+    </h4>
+
+    <h2>
+        Agenda
+    </h2>
+
+    <ul class="list-group">
+        <li class="list-group-item">Review Homework and Issues</li>
+        <li class="list-group-item">No Quiz :)</li>
+        <li class="list-group-item">Questions?</li>
+        <li class="list-group-item">Positioning</li>
+        <li class="list-group-item">IDs</li>
+        <li class="list-group-item">Fancy Shapes</li>
+        <li class="list-group-item">Animations</li>
+        <li class="list-group-item">Questions?</li>
+        <li class="list-group-item">Class Time To Work</li>
+    </ul>
+
+
+    <br>
+
+    <hr>
+
+    <h2>
+        Fixed, Absolute, and Relative Positioning
+    </h2>
+
+    <h4>
+        Up to this point all of our elements have just been drawn from the beginning to the end and in that order. However, we can change where elements are drawn even if the code is written in a different place.
+        <br>
+        <br>
+        This is done by changing the position property in css.
+        <br>
+        Have you noticed that the nav at the very top of this web page stays fixed to the top of the browser window even when we scroll down?
+        <br>
+        <br>
+        This is accomplished by setting the value of position to fixed. It is possible that other elements will still be shown in front of it so we also need to change the z-index property which is resposible for layering elements.
+        <br>
+        <br>
+        Fixed conted is positioned relative to the web browser window.
+    </h4>
+
+    <pre class="border border-white">
+.fixed {
+    position: fixed;
+    z-index: 9999;
+}
+    </pre>
+
+    <h4>
+        If we wanted our content to be positioned relative to the full web page (which may extend beyond the edge of the web browser window) and as opposed to where it's supposed to be drawn based on where we wrote HTML... (look in the top left corner)
+    </h4>
+
+    <h4 style="position: absolute; top: 70px; left: 0px;">
+        then we set the position to absolute
+    </h4>
+
+    <pre class="border border-white">
+.absolute {
+    position: absolute;
+    top: 70px;
+    left: 0px;
+}
+    </pre>
+
+    <h4>
+        You'll notice the above style has a new property called top and left. You can add these to offset the element. I added them because the example was not correctly being positioned so I had to set the value of top to be 70px from the top and left 0px from the left.
+        <br>
+        <br>
+        Lastly, if we just want to slightly offset content from where it would be normally drawn, or rather relative to the position it's supposed to be drawn then we set the position to <span style="position: relative; left:-50px">relative</span>.
+        <br>
+        <br>
+        An issue you can see is that I've injected some CSS just on the word relative, however the . has not shifted as well. When you move elements with left and top, the white space does not become usable and is treated as if the element was not offset.
+    </h4>
+
+    <pre class="border border-white">
+.relative {
+    position: relative;
+    left: -50px;
+}
+    </pre>
+
+    <h2>
+        Floating Elements
+    </h2>
+
+    <br>
+
+    <a href="examples/index.html" target="_blank">Positioning Demo</a>
+
+    <hr>
+
+    <h2>
+        Color
+    </h2>
+
+    <h4>
+        Up until now we have only talked about pre-defined colors (aqua, smoke white, white, earth green, etc.) however, there are many many more (16 million+ that computer can show).
+        <br>
+        <br>
+        Here are common color setting methods.
+
+    </h4>
+
+    <div id="accordion">
+
+        <!--What Is It?-->
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" style="text-decoration: none">
+                        <h3>
+                            RGB
+                        </h3>
+
+                    </button>
+                </h5>
+            </div>
+
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                    <p>
+                        Red, Green, Blue (255, 128, 36)
+                        <br>
+                        Sometimes RGBA where the A is alpha and looks like this (255, 128, 36, 255)
+                        <br>
+                        <br>
+                        If you want to change the alpha then you need to specify the opacity which is a value that ranges from 0-1 where 0 is transparent and 1 is completely opaque. You ocan also do a percentage from 0% to 100%.
+                    </p>
+
+                    <pre class="border border-white">
+p {
+    color: rgb(255, 128, 36);
+    opacity: 0.5;
+}
+                    </pre>
+
+                </div>
+            </div>
+        </div>
+
+        <!--Setup-->
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="text-decoration: none">
+                        <h3>
+                            CMYK
+                        </h3>
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="card-body">
+                    <p>
+                        Cyan Magenta Yellow Key
+                        <br>
+                        It's for printing, not computers. If you see this option in illustrator when you make an image, don't select it.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!--Uploading New Files-->
+        <div class="card">
+            <div class="card-header" id="headingThree">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="text-decoration: none">
+                        <h3>
+                            Hex Code
+                        </h3>
+
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                <div class="card-body">
+                    <p>
+                        It's still RGB/RGBA however it looks like this #ff8024ff which is the base 16 equivalent of (255, 128, 36, 255).
+                        <br>
+                        <br>
+                        Programmers might want to type 0xff8024. Websites do not like this. You need to use the # symbol.
+                        <br>
+                        <br>
+                        If you want to change the alpha then you need to specify the opacity which is a value that ranges from 0-1 where 0 is transparent and 1 is completely opaque. You ocan also do a percentage from 0% to 100%.
+                    </p>
+
+                    <pre class="border border-white">
+p {
+    color: #ff8024;
+    opacity: 50%;
+}
+                    </pre>
+
+                </div>
+            </div>
+        </div>
+
+        <!--Publishing Website-->
+        <div class="card">
+            <div class="card-header" id="headingFour">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" style="text-decoration: none">
+                        <h3>
+                            HSLA
+                        </h3>
+
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion" style="border-color:#ffffff">
+                <div class="card-body">
+                    <p>
+                        Hue, Saturation, Lightness, Alpha.
+                        <br>
+                        <br>
+                        I have no idea how to figure out what color to make based on this method. You'd need to do research if you decided to use it but the most common methods are hex or pre-defined colors.
+                        <br>
+                        <br>
+                        A benefit of this method is that you do not need the opacity property to set transparency. The 4th value represents alpha.
+                    </p>
+
+                    <pre class="border border-white">
+p {
+    color: hsl(0, 100%, 50%, 100%);
+}
+                    </pre>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+
+    <hr>
+
+    <br>
+
+    <h2>
+        Changing Fonts
+    </h2>
+
+    <h4 style="font-family: cursive">
+        Changing fonts is easy with the font-family property
+    </h4>
+
+    <pre class="border border-white">
+&lt;h4 style="font-family: cursive"&gt;
+    Changing fonts is easy with the font-family property
+&lt;/h4&gt;
+    </pre>
+
+    <h4 style="font-family: 'Times'">
+        You can specify the font value in quotes or not
+    </h4>
+
+    <pre class="border border-white">
+&lt;h4 style="font-family: 'Times'"&gt;
+    You can specify the font value in quotes or not
+&lt;/h4&gt;
+    </pre>
+
+    <h4 style="font-family: Verdana, Times, 'Courier New'">
+        And you can specify many different fonts in the event of one of the fonts failing to load
+    </h4>
+
+    <pre class="border border-white">
+&lt;h4 style="font-family: Verdana, Times, 'Courier New'"&gt;
+    And you can specify many different fonts in the event of one of the fonts failing to load
+&lt;/h4&gt;
+    </pre>
+
+    <h4>
+        You don't need quotes however, it is recommended if the font name has special characters such as $ , ! or /
+        <br>
+        <br>
+        It's also good practice to end the list of fallback fonts with something generic (pages 269-270 of HTML & CSS Jon Duckett)
+        <br>
+        <br>
+        Why do you need fallback fonts though? Won't they all work?
+        <br>
+        <br>
+        Not if... A. the font isn't installed by the user, but also because of B. not every font works on every web browser!
+    </h4>
+
+    <img src="img/fonts.png" width="100%">
+
+    <br>
+    <br>
+
+    <h2>
+        Custom Fonts
+    </h2>
+
+    <h4>
+        In order to add a custom font we need to do 2 things.
+        <br>
+        <br>
+        First add it to our files. Create a folder called fonts in your website directory and place the font files.
+        <br>
+        <br>
+        <img src="img/font-files.png">
+        <br>
+        <br>
+        Second you need to load the font with CSS.
+    </h4>
+
+    <pre class="border border-white">
+@font-face {
+    font-family: 'Gazpacho';
+    src: url('../fonts/Gazpacho-Black.woff2') format('woff2'),
+         url('../fonts/Gazpacho-Black.woff') format('woff'),
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+    </pre>
+
+    <h4>
+        You would place the above code directly in your CSS file. The 'font-family' property is the identifer you will declare for the font. If I want to apply the font to text then I would type Gazpacho. The reason there are multiple url values is because they are fallbacks if one ofo them does not work for a particular web browser. Additionally, the URL does not actually have to be pointing to a file in your directories. It can be a URL to a font that exists on another website. You might do this with Google fonts.
+        <br>
+        <br>
+        The below code is an example of an h1 tag using the loading font from the above code.
+    </h4>
+
+    <br>
+    <pre class="border border-white">
+h1 {
+    font-family: Gazpacho
+}
+    </pre>
+
+    <h4>
+        The easies way to generate the CSS associated with a font is to use a typeface generator. The book has a link to one on fontsquirrel but I checked and it doesn't work. As of now this one works <a href="https://transfonter.org" target="_blank">Transfonter</a>. You can also just Google "Font face generator css" to find more.
+    </h4>
+
+    <br>
+    <br>
+
+    <h2>
+        Other Text Styles
+    </h2>
+
+    <h4>
+        Pages 279-288 have a lot of extra styles for text such as
+        <br>
+        <br>
+        <ul>
+            <li>Bolding, Italicizing, Underlining</li>
+            <li>Blinking Text (book says it's annoying and people hate it &hearts;) </li>
+            <li>Letter spacing</li>
+            <li>More text alignment (left/right/center/top/middle/bottom)</li>
+            <li>Text indentation</li>
+            <li>Drop shadows</li>
+        </ul>
+        <br>
+        Please glance these pages. There is a lot of information.
+    </h4>
+
+    <hr>
+
+    <h2>
+        Interactive Styles
+    </h2>
+
+    <br>
+
+    <h4>
+        You have have noticed that &lt;a&gt; tags looks different depending on if you click them, put your cursor over them, or scroll past them. You can configure them by appending a : to the tag in the CSS and specifying either link,visited,hover, or active. Look at this link <a href="https://www.youtube.com/shorts/BIX59HL3BSs">here</a>
+    </h4>
+    <br>
+    <pre class="border border-white">
+a:link {
+    color: #f95738;
+}
+
+a:hover {
+    color: #adb5bd;
+}
+
+a:visited {
+    color: #f95738;
+}
+
+a:active {
+    color: #f95738;
+}
+    </pre>
+
+    <h4>
+        active is the state when you've actively clicked the link.
+        <br>
+        <br>
+        Some of these states are not exclusive to links.
+        <br>
+        Hover the cursor over the below image :)
+    </h4>
+
+    <img class="fun" width="200px" height="200px">
+
+    <br>
+
+    <hr>
+
+    <h2>
+        Creating Space In Elements
+    </h2>
+
+    <br>
+
+    <h4>
+        So far we've only talked about creating space between elements using margins.
+        <br>
+        We can actually create space inside elements to push our content around
+    </h4>
+    <br>
+
+    <div style="background-color: aqua; width:200px;height: 200px">
+
+
+        <div style="background-color:brown; width:50px;height: 50px; padding-left: 50px">
+
+        </div>
+
+    </div>
+
+    <h4>Without padding</h4>
+
+    <pre class="border border-white">
+&lt;div style="background-color: aqua; width:200px;height: 200px;&gt;
+    &lt;div style="background-color: brown; width:50px;height: 50px;&gt;&lt;/div&gt;
+&lt;/div&gt;
+    </pre>
+
+    <div style="background-color: aqua; width:200px;height: 200px; padding-left: 75px; padding-top: 75px">
+        <div style="background-color:brown; width:50px;height: 50px;"></div>
+    </div>
+
+    <h4>
+        With 75px padding on the top and left
+    </h4>
+
+    <pre class="border border-white">
+&lt;div style="background-color: aqua; width:200px;height: 200px; padding-left: 75px; padding-top:75px;&gt;
+    &lt;div style="background-color: brown; width:50px;height: 50px;&gt;&lt;/div&gt;
+&lt;/div&gt;
+    </pre>
+
+    <h4>
+        <br>
+        The padding should be applied to the container element because it pushes the content on the inside around.
+    </h4>
+
+
+
+
+    <br>
+
+
+
+    <hr>
+
+    <h2>
+        Classes
+    </h2>
+
+    <br>
+
+    <h4>
+        Applying different sets of styles to the same type of tag is really easy.
+        <br>
+        The below examples have their color set without using the style attribute.
+    </h4>
+
+    <h4 class="red">
+        Applying different sets of styles to the same type of tag is really easy.
+    </h4>
+
+    <h4 class="green">
+        Applying different sets of styles to the same type of tag is really easy.
+    </h4>
+
+    <h4 class="blue">
+        Applying different sets of styles to the same type of tag is really easy.
+    </h4>
+
+    <h4> The CSS looks like this.</h4>
+
+    <pre class="border border-white">
+h4.red {
+    color: indianred
+}
+
+h4.green {
+    color: greenyellow
+}
+
+h4.blue {
+    color: cornflowerblue
+}
+    </pre>
+
+    <h4> And the HTML looks like this.</h4>
+
+    <pre class="border border-white">
+&lt;h4 class="red"&gt;
+    Applying different sets of styles to the same type of tag is really easy.
+&lt;/4&gt;
+
+&lt;h4 class="green"&gt;
+    Applying different sets of styles to the same type of tag is really easy.
+&lt;/4&gt;
+
+&lt;h4 class="blue"&gt;
+    Applying different sets of styles to the same type of tag is really easy.
+&lt;/4&gt;
+    </pre>
+
+    <h4>
+        Of course, not adding the . after the tag in the css means that style will be the default if no class is specified.
+        <br>
+        <br>
+        Another thing to note is that you can combine styles.
+    </h4>
+
+    <h4 class="red left">
+        Applying different sets of styles to the same type of tag is really easy.
+    </h4>
+
+    <h4 class="green center">
+        Applying different sets of styles to the same type of tag is really easy.
+    </h4>
+
+    <h4 class="blue right">
+        Applying different sets of styles to the same type of tag is really easy.
+    </h4>
+
+    <pre class="border border-white">
+h4.red {
+    color: indianred
+}
+
+h4.green {
+    color: greenyellow
+}
+
+h4.blue {
+    color: cornflowerblue
+}
+
+h4.left {
+    text-align: left
+}
+
+h4.center {
+    text-align: center
+}
+
+h4.right {
+    text-align: right
+}
+    </pre>
+
+    <h4> And the HTML looks like this.</h4>
+
+    <pre class="border border-white">
+&lt;h4 class="red left"&gt;
+    Applying different sets of styles to the same type of tag is really easy.
+&lt;/4&gt;
+
+&lt;h4 class="green center"&gt;
+    Applying different sets of styles to the same type of tag is really easy.
+&lt;/4&gt;
+
+&lt;h4 class="blue right"&gt;
+    Applying different sets of styles to the same type of tag is really easy.
+&lt;/4&gt;
+    </pre>
+
+    <h4>
+        You can combine as many different classes as you want. Be sure to separate each class in your class attribute with a space. If the class itself has spaces then consider using a hypen - to act as the space such as instead of "h4.green text" make it "h4.green-text".
+        <br>
+        <br>
+        Another thing to note is the above method for creating classes is specific to each tag. If you tried to apply "red left" to an &lt;h3&gt; then it will not work because the above definition is specific to the &lt;h4&gt; tag. You will have to make a class definition for that tag in your css if you want it to work. You can comfortably use the same names as well without running into a conflict.
+        <br>
+        <br>
+        An alternative is to make your class generic like this. The below &lt;h5&gt; and &lt;h2&gt; tags are referencing the same classes in the CSS.
+    </h4>
+
+    <h5 class="orange right-justified">Hello I am orange</h5>
+    <h2 class="orange right-justified">Hello I am orange</h2>
+
+    <pre class="border border-white">
+&lt;h5 class="orange right-justified"&gt;
+    Applying different sets of styles to the same type of tag is really easy.
+&lt;/h5&gt;
+
+&lt;h2 class="orange right-justified"&gt;
+    Applying different sets of styles to the same type of tag is really easy.
+&lt;/h2&gt;
+    </pre>
+
+    <pre class="border border-white">
+.orange {
+    color: darkorange
+}
+
+.right-justified {
+    text-align: right
+}
+    </pre>
+
+    <hr>
+
+    <h2>
+        Assignment 4
+    </h2>
+
+    <br>
+
+    <h4>
+        For this week's assignment you will be making a fan page.
+        <br>
+        <br>
+        This page can look absolutely attrocious because they usually do. Overload it with styles and content!
+        <br>
+        <br>
+        Additionally, add a new web page link to your homepage.
+
+        <br>
+        <br>
+        Here are quality submissions that would earn full credit. The original assignment was a full website but I'm changing it to require only 1 page.
+        <br>
+        <br>
+        <a href="https://vivianmaryy.github.io/Webdev1/Fansite/fansite.html" target="_blank">Example 1</a>
+        <br>
+        <a href="https://sternosaur.github.io/webclass-demo/fansite.html" target="_blank">Example 2</a>
+        <br>
+        <a href="http://marinaatkin.com/WebProgrammingClass/Fansite/index.html" target="_blank">Example 3</a>
+
+    </h4>
+    <br>
+
+    <h2>
+        Readings Due Next Week
+    </h2>
+
+    <hr>
+    <h4>
+        None! Enjoy the week off from reading :)
+    </h4>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+</body></html>

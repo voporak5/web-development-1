@@ -1,0 +1,36 @@
+body {
+    background-image: url('../images/background.png');
+}
+
+#white-background {
+    background-color: white;
+}
+
+#red-font {
+    color: red;
+}
+
+div {
+    background-color: red;
+}
+
+p.large-font {
+    font-size: 40px;
+}
+
+p.blue-background {
+    background-color: blue;
+    color: white;
+}
+
+.orange-background {
+    background-color: orange;
+}
+
+h4.orange-background {
+    background-color: green;
+}
+
+.orange-background .large-font {
+    font-size: 60px;
+}

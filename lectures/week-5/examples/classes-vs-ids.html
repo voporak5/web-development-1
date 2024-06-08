@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <meta charset="UTF-8">
+
+    <title>
+        Classes VS IDs
+    </title>
+
+    <link rel="stylesheet" href="styles/classes-vs-ids.css">
+
+</head>
+
+<body>
+
+    <p id="white-background">
+        Here is a p tag using the white-background id
+    </p>
+
+    <div id="white-background">
+        Here is a div using the same white-background id
+    </div>
+
+    <p>
+        Here is a p tag where the CSS is applying a red background color to all P tags
+    </p>
+
+    <div>
+        Here is a div tag where the CSS is applying a red background color to all div tags
+    </div>
+
+    <p class="large-font">
+        Here is a p tag that is using a large-font class. It also has a red background because of the generic p tag styles.
+    </p>
+
+    <p class="blue-background">
+        Here is a p tag that is using a blue-background class to override the red background specified by the generic p tag styles. The font color has also been set to white for readability purposes.
+    </p>
+
+    <p class="blue-background large-font">
+        Here is a p tag that is using a blue-background class to override the red background specified by the generic p tag styles. The font color has also been set to white for readability purposes.
+        <br />
+        It also uses the large-font class to combine styles.
+    </p>
+
+    <p class="orange-background">
+        Here is a p tag that is using a non-tag specific orange-background class to override the red background specified by the generic p tag styles.
+    </p>
+
+    <div class="orange-background">
+        Here is a div tag that is using the same non-tag specific orange-background class that the previous p tag is using
+    </div>
+
+    <h4 class="orange-background">
+        Here is a h4 tag that is using an h4 specific orange-background class which actually sets the color green to show that the h4 specific class takes priority over the generic orange-background class
+    </h4>
+
+    <div class="orange-background">
+        <p class="large-font">
+            Here is a p that uses the large-font subclass of the orange-background class. all p tags have a tag specific large-font class however the large-font subclass of orange-background is taking priority.
+        </p>
+    </div>
+</body></html>

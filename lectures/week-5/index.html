@@ -152,13 +152,76 @@
         When you float content the content will be pushed as far left or right as possible depending on if you set the float value to be left or right.
     </h4>
 
-    <a href="examples/index.html" target="_blank">Positioning Demo</a>
+    <a href="examples/positioning.html" target="_blank">Positioning Demo</a>
 
     <hr>
 
     <h2>
-        Flex Grids
+        The Flexbox
     </h2>
+
+    <h4>
+        Another way we can put our content in a row is by using a flexbox.
+        <br>
+        <br>
+        The flexbox will fit everything as best as it can based on the width of the container and push content onto the next line if it does not fit.
+        <br>
+        <br>
+        Resize the browser window to witness how the colored boxes below change their arrangement.
+    </h4>
+
+    <div style="display: flex; flex-wrap: wrap;">
+        <div style="background-color: aqua; width: 128px; height: 128px;"></div>
+        <div style="background-color:azure ; width: 128px; height: 128px;"></div>
+        <div style="background-color: aqua; width: 128px; height: 128px;"></div>
+        <div style="background-color:azure ; width: 128px; height: 128px;"></div>
+        <div style="background-color: aqua; width: 128px; height: 128px;"></div>
+        <div style="background-color:azure ; width: 128px; height: 128px;"></div>
+        <div style="background-color: aqua; width: 128px; height: 128px;"></div>
+        <div style="background-color:azure ; width: 128px; height: 128px;"></div>
+        <div style="background-color: aqua; width: 128px; height: 128px;"></div>
+        <div style="background-color:azure ; width: 128px; height: 128px;"></div>
+        <div style="background-color: aqua; width: 128px; height: 128px;"></div>
+        <div style="background-color:azure ; width: 128px; height: 128px;"></div>
+        <div style="background-color: aqua; width: 128px; height: 128px;"></div>
+        <div style="background-color:azure ; width: 128px; height: 128px;"></div>
+    </div>
+
+    <br>
+
+    <pre class="border border-white">
+&lt;div style="display: flex; flex-wrap: wrap;"&gt;
+    &lt;div style="background-color: aqua; width: 128px; height: 128px;"&gt;&lt;/div&gt;
+    &lt;div style="background-color:azure ; width: 128px; height: 128px;"&gt;&lt;/div&gt;
+    &lt;div style="background-color: aqua; width: 128px; height: 128px;"&gt;&lt;/div&gt;
+    &lt;div style="background-color:azure ; width: 128px; height: 128px;"&gt;&lt;/div&gt;
+    &lt;div style="background-color: aqua; width: 128px; height: 128px;"&gt;&lt;/div&gt;
+    &lt;div style="background-color:azure ; width: 128px; height: 128px;"&gt;&lt;/div&gt;
+    &lt;div style="background-color: aqua; width: 128px; height: 128px;"&gt;&lt;/div&gt;
+    &lt;div style="background-color:azure ; width: 128px; height: 128px;"&gt;&lt;/div&gt;
+    &lt;div style="background-color: aqua; width: 128px; height: 128px;"&gt;&lt;/div&gt;
+    &lt;div style="background-color:azure ; width: 128px; height: 128px;"&gt;&lt;/div&gt;
+    &lt;div style="background-color: aqua; width: 128px; height: 128px;"&gt;&lt;/div&gt;
+    &lt;div style="background-color:azure ; width: 128px; height: 128px;"&gt;&lt;/div&gt;
+    &lt;div style="background-color: aqua; width: 128px; height: 128px;"&gt;&lt;/div&gt;
+    &lt;div style="background-color:azure ; width: 128px; height: 128px;"&gt;&lt;/div&gt;
+&lt;/div&gt;
+    </pre>
+
+    <h4>
+        By not setting display to flex each &lt;div&gt; would be pushed to the next line. You could use any of the methods we talked about prior such as changing the display to inline however, this flex setting is meant to solve having to use Block, Inline, Tables, and Positional values by making a solution that solves everything.
+        <br>
+        <br>
+        See the below example of the &lt;div&gt; without a flex display
+    </h4>
+
+    <div style="background-color: aqua; width: 128px; height: 128px;"></div>
+    <div style="background-color:azure ; width: 128px; height: 128px;"></div>
+
+    <br>
+    <br>
+
+
 
     <hr>
 
@@ -168,7 +231,50 @@
 
     <h4>
         Warning, the following content is not advised to be used. It is purely for your knowledge so you know it exists in the event you encounter it. It is old, outdated, and classes are far superior.
+        <br>
+        <br>
+        Back in the day css classes did not exist. Instead you had to use IDs in your stylesheet which looks like this.
+        <br>
+        <br>
+        Declare a # followed by the name and the rest is the same as you currently do with classes.
+    </h4>
 
+    <pre class="border border-white">
+#cadetblue-text {
+    color: cadetblue;
+}
+    </pre>
+
+    <h4 id="cadetblue-text">
+        Applying the style is easy. Just use the id attribute and pass in the name of the id of the styles.
+    </h4>
+
+    <pre class="border border-white">
+&lt;h4 id="cadetblue-text"&gt;
+    Applying the style was easy. Just use the id attribute and pass in the name of the id of the styles.
+&lt;/h4&gt;
+    </pre>
+
+    <br>
+
+    <h4>
+        The main disadvantage is that you cannot mix and match different sets of styles. If you want 1 set of styles that adds a white border and another set of styles that make the font italicized you could only pick 1. With classes you can add both of them but you could not do something like this
+    </h4>
+
+    <pre class="border border-white">
+&lt;h4 id="white-border italicized"&gt;
+    Applying the style was easy. Just use the id attribute and pass in the name of the id of the styles.
+&lt;/h4&gt;
+    </pre>
+
+    <h4>
+        You would need to make an entirely new set of styles that combines them all in your css and reference that in the id attribute. It was very tedious and time consuming.
+        <br>
+        <br>
+        Currently you can specify both an id and classes in your HTML elements. The id styles will take priority over the class styles so if there is a property being set in both the id and class such as font-size, then the id will be what is used.
+        <br>
+        <br>
+        <a href="examples/classes-vs-ids.html" target="_blank">Classes vs IDs Demo</a>
     </h4>
 
     <br>
@@ -181,7 +287,31 @@
         Fancy Shapes
     </h2>
 
+    <h4>
+        CSS can do more than just stylize content, you can draw with it too (although this can be quite a challenge)
+    </h4>
 
+    <div style="display: flex; flex-wrap: wrap">
+        <div style="height: 50px; width: 50px; background-color: #555; border-radius: 50%;"></div>
+
+        <div style="height: 0px; width: 0px; border-left: 25px solid transparent; border-right: 25px solid transparent; border-top: 50px solid #555;"></div>
+
+        <div style="margin-left: 30px; width: 100px; height: 50px; transform: skew(20deg); background: #555;"></div>
+
+        <div style="margin-left: 30px; width: 50px; height: 50; border: 0px solid transparent; background: linear-gradient(45deg, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 43%,#fff 45%,#fff 55%,rgba(0,0,0,0) 57%,rgba(0,0,0,0) 100%),linear-gradient(135deg, transparent 0%,transparent 43%,#fff 45%,#fff 55%,transparent 57%,transparent 100%);"></div>
+
+    </div>
+
+    <h4>
+        There are several resources to help you out with this, but for the most part these shapes are created by playing with the borders and some offsets such as filling in the entire div background as white and then forcing the border to be transparent and bringig in towards the center to create the illusion of a shape being drawn.
+        <br>
+        <br>
+        <a href="https://www.w3schools.com/cssref/css3_pr_border-radius.php" target="_blank">border radius</a>
+        <br>
+        <a href="https://www.w3schools.com/howto/howto_css_shapes.asp" target="_blank">simple shapes</a>
+        <br>
+        <a href="https://css-tricks.com/the-shapes-of-css/" target="_blank">complex shapes</a>
+    </h4>
 
     <hr>
 
@@ -191,6 +321,88 @@
 
     <br>
 
+    <div style="height: 400px">
+        <div class="animation-class">
+        </div>
+    </div>
+
+    <h4>
+        You can also use CSS to make your content do interesting things such as move elements around the web page over time or change their settings altogether.
+    </h4>
+
+    <pre class="border border-white">
+&lt;div class="animation-class"&gt;&lt;/div&gt;
+    </pre>
+
+    <pre class="border border-white">
+@keyframes animation {
+    0% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+    }
+
+    25% {
+        background-color: yellow;
+        left: 200px;
+        top: 0px;
+    }
+
+    50% {
+        background-color: blue;
+        left: 200px;
+        top: 200px;
+    }
+
+    75% {
+        background-color: green;
+        left: 0px;
+        top: 200px;
+    }
+
+    100% {
+        background-color: red;
+        left: 0px;
+        top: 0px;
+    }
+}
+
+.animation-class {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: relative;
+    animation-name: animation;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+    </pre>
+
+    <h4>
+        Using the @keyframes keyword in our CSS we can create an animation and specify the state at different times throughout the lifetime of the animation.
+        <br>
+        <br>
+        We reference the animation we created in the CSS class and specify how long it lasts. We can also define how many times it should run which in the above case I specified infinite.
+        <br>
+        <br>
+        You can play with positional offsets to the element move around the web page.
+        <br>
+        <br>
+        Take a look at the following links to help you get a better understanding.
+        <br>
+        <a href="https://www.w3schools.com/css/css3_transitions.asp" target="_blank">Transitions</a>
+        <br>
+        <a href="https://www.w3schools.com/css/css3_animations.asp" target="_blank">Keyframes</a>
+        <br>
+        <a href="https://www.w3schools.com/css/css3_2dtransforms.asp" target="_blank">2D transforms</a>
+        <br>
+        <a href="https://www.w3schools.com/css/css3_3dtransforms.asp" target="_blank">3D transforms</a>
+        <br>
+        <br>
+        Try and apply the :hover modifier to your CSS to only play the animation when the cursor is over the element!
+
+
+    </h4>
 
 
     <hr>
@@ -208,18 +420,12 @@
         For this week's assignment you will be making a 10 interactable shapes.
         <br>
         <br>
-        This page can look absolutely attrocious because they usually do. Overload it with styles and content!
-        <br>
-        <br>
+    </h4>
+
+    <img src="img/shapes.png" width="75%">
+
+    <h4>
         Additionally, add a new web page link to your homepage.
-
-        <br>
-        <br>
-        Here are quality submissions that would earn full credit. The original assignment was a full website but I'm changing it to require only 1 page.
-        <br>
-        <br>
-
-
     </h4>
     <br>
 

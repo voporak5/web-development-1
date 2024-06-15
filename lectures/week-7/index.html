@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../../favicon.jpg">
+    <title>Week 7</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../../styles/styles.css">
+</head>
+
+<body class="container">
+
+    <div id="#nav"></div>
+
+    <script>
+        fetch('../nav.html')
+            .then(response => response.text())
+            .then(text => document.getElementById('#nav').innerHTML = text);
+    </script>
+
+    <h1 class="row justify-content-center" style="padding-top: 100px;">
+        Week 7
+    </h1>
+
+    <h4 class="row justify-content-center">
+        Intro To Javascript
+    </h4>
+
+    <h2>
+        Agenda
+    </h2>
+
+    <ul class="list-group">
+        <li class="list-group-item">Review Homework and Issues</li>
+        <li class="list-group-item">No Quiz</li>
+        <li class="list-group-item">Javascript</li>
+        <li class="list-group-item">Questions?</li>
+        <li class="list-group-item">Class Time To Work</li>
+    </ul>
+
+
+    <br>
+
+    <hr>
+
+    <h2>
+        What is Javascript and How Does It Relate To Web Pages?
+    </h2>
+
+    <h4 id="intro">
+        Javascript is a way for you to add logic to your website. It's a programming language (although some would argue you aren't actually programming) primarily used for web development. It has other uses as well, but nothing you care about for this class.
+        <br>
+        <br>
+        In terms of the relation with HTML and CSS, HTML is for defining what to put on a page, CSS is for defining how the content will be presented, and JS can add logic to make it smart and more intuitive to users.
+        <br>
+        <br>
+        You can handle logging someone in, build a game, or throw popups asking the user to confirm their choice before submitting as a few examples of the limitless potential.
+        <br>
+        <br>
+        Maybe you want to make a calculator that adds two numbers together?
+        <br>
+        <br>
+        <input id="input1">
+        <input id="input2">
+
+        <h4 id="sum">
+            The Sum Is:
+        </h4>
+    </h4>
+
+    <script>
+        let firstNumber = 0;
+        let secondNumber = 5;
+
+        const calculate = function() {
+            let input1 = document.getElementById('input1').value;
+            let input2 = document.getElementById('input2').value;
+
+            document.getElementById('sum').innerHTML = "The Sum Is: " + (parseInt(input1) + parseInt(input2));
+        }
+
+        var button = document.createElement('h4');
+        button.innerHTML = "Calculate";
+        button.style.cssText = 'border-style: solid; display: inline; padding: 5px 10px 5px 10px;'
+        button.onclick = calculate;
+        document.body.appendChild(button);
+
+        //document.write('<h4>' + (input1 + input2) + '</h4>');
+    </script>
+    <br>
+    <br>
+    <pre class="border border-white">
+
+&lt;input id="input1"&gt;
+&lt;input id="input2"&gt;
+
+&lt;h4 id="sum"&gt;
+    The Sum Is:
+&lt;/h4&gt;
+
+&lt;script&gt;
+    let firstNumber = 0;
+    let secondNumber = 5;
+
+    const calculate = function() {
+        let input1 = document.getElementById('input1').value;
+        let input2 = document.getElementById('input2').value;
+
+        document.getElementById('sum').innerHTML = "The Sum Is: " + (parseInt(input1) + parseInt(input2));
+    }
+
+    var button = document.createElement('h4');
+    button.innerHTML = "Calculate";
+    button.style.cssText = 'border-style: solid; display: inline; padding: 5px 10px 5px 10px;'
+    button.onclick = calculate;
+    document.body.appendChild(button);
+&lt;/script&gt;
+
+    </pre>
+
+
+    <hr>
+
+    <h2>
+        Getting Started With Javascript
+    </h2>
+
+
+    <h4>
+        We'll look at the quick and dirty way for getting setup which is not ideal, but good enough to learn the basics.
+        <br>
+        <br>
+        Start with the standard HTML file.
+    </h4>
+
+    <pre class="border border-white">
+&lt;!doctype html&gt;
+&lt;html lang="en"&gt;   
+    &lt;head&gt
+    
+        &lt;meta charset="utf-8"&gt;       
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;        
+        &lt;title&gt;Homepage&lt;/title&gt;
+        
+    &lt;/head&gt
+
+    &lt;body&gt;
+            
+    &lt;/body&gt;
+&lt;/html&gt;
+    </pre>
+
+    <h4>
+        In order to add Javascript we are going to use the &lt;script&gt; tag.
+        This will define a section where we will add Javascript!
+    </h4>
+
+    <pre class="border border-white">
+&lt;!doctype html&gt;
+&lt;html lang="en"&gt;   
+    &lt;head&gt
+    
+        &lt;meta charset="utf-8"&gt;       
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;        
+        &lt;title&gt;Homepage&lt;/title&gt;
+        
+    &lt;/head&gt
+
+    &lt;body&gt;
+    
+        &lt;!--Here is where our Javascript will go--&gt;
+        &lt;script&gt;
+        
+        &lt;/script&gt;
+        
+    &lt;/body&gt;
+&lt;/html&gt;
+    </pre>
+
+    <h4>
+        You can assume all of the following code will be placed inside the &lt;script&gt tag.
+        <br>
+        <br>
+        With Javascript we can write to the webpage HTML very easily by typing
+    </h4>
+
+    <pre class="border border-white">
+    document.write('Hello World');
+    </pre>
+
+    <h4>
+        This will simply add "Hello World" to your webpage.
+        <br>
+        <a href="examples/example-1.html" target="_blank">Example 1</a>
+        <br>
+        <br>
+        However, doing exactly that would be the equivalent of writing 'Hello World' without an tags.
+        <br>
+        <br>
+        You can change the content inside the parentheses to include actual tags like this
+    </h4>
+
+    <pre class="border border-white">
+    document.write('&lt;h1&gt;Hello World&lt;/h1&gt;');
+    </pre>
+
+
+    <h4>
+        <a href="examples/example-2.html" target="_blank">Example 2</a>
+    </h4>
+
+    <hr>
+
+    <h2>Basics</h2>
+
+    <h4>
+        One of the most popular things to use programming for is math.
+        We could very easily write a line of code to print the output of 235/6 like this
+
+    </h4>
+
+    <pre class="border border-white">
+    document.write('&lt;p&gt;' + (235/6) + '&lt;/p&gt;');
+    </pre>
+
+    <h4>
+        Which is...
+    </h4>
+
+    <script>
+        document.body.innerHTML += '<h4>' + (235 / 6) + '</h4>';
+    </script>
+
+    <h4>
+        But that's not very useful because the input are more than likely to change so what we need to do to help us is use variables
+        <br>
+        <br>
+        Variables are things that let us store a value that we can easily use throughout the program. If you think back to math class (1 + x = 4) x is a variable that could represent anything. In this particular example we definitely know the value is 3. In math class we usually try to figure out what the value is of the variable, but in programming we allow the code to generate the result based on whatever the variable changes into.
+        <br>
+        <br>
+        Creating a variable is easy. We use the keyword var to say "I want to create a variable" and then you specify what the name of the variable will be. It can be single letters or full words. It can also have numbers in it but it cannot have special characters.
+        <br>
+        <br>
+        You can also use the keyword let as an alternative to var however, the difference between the 2 is hard to explain. Additionally you can use const which simply meens the value of the variable cannot be changed ever which can be useful when working with teams so team members don't accidentally change the value of variables that shouldn't change.
+        <br>
+        <br>
+        When creating a variable you can specify a value immediately or change it later if it wasn't created using const.
+    </h4>
+
+    <pre class="border border-white">
+    var x;
+    let firstNumber;
+    const PI = 3.14;
+    
+    x = 100;
+    firstNumber = 50;
+    </pre>
+
+    <h4>
+        There are 3 basic types of values we can assign to a variable which are numbers, words, and booleans (true/false).
+        <br>
+        <br>
+        Whole numbers that do not have decimal values (including 1.00) are called integers.
+        <br>
+        <br>
+        Decimal value numbers such as 1.00 or 1.2111234 are called floats.
+        <br>
+        <br>
+        Words that have more than 1 letter are called strings.
+        <br>
+        <br>
+        Single letters are called characters (which more than 1 character creates a string).
+    </h4>
+
+    <pre class="border border-white">
+    var name = "Cameron";
+    var lastInitial = 'C';
+    var age = 31;
+    var isMarried = true;
+    var numberOfBathrooms = 2.5; 
+    </pre>
+
+    <h4>
+        Something to point out is that whenever we end a statement (a single piece of code that we want to execute) we should add a semicolon ; to the end. This is the equivalent of adding a period in grammar. Javascript will still work without the semicolon while other programming languages will fail so it's good to just get into a habit of using semicolons;
+        <br>
+        <br>
+        Plus they making reading the code easier especially when the code is compressed to reduce all white space like this.
+    </h4>
+
+    <pre class="border border-white">
+    var name = "Cameron"; var lastInitial = 'C'; var age = 31; var isMarried = true; var numberOfBathrooms = 2.5; 
+    </pre>
+
+    <h4>
+        We can easily inject the variable into Javascript like this
+    </h4>
+
+    <pre class="border border-white">
+    var name = "Cameron";
+    document.write('&lt;h1&gt;' + name + '&lt;/h1&gt;');
+    </pre>
+
+    <h4>
+        This isn't very usuable though because each line executes one time and we might as well just write everything inside of the parentheses, but if we try referencing the variable multiple times in our webpage. That way if the value needs to change we only have to change it in 1 place.
+        <br>
+        <br>
+        What would also be very useful too is if there was a way for the page to update if the value of the variable changes.
+        <br>
+        <br>
+        To accomplish this we need to create something called a function. A function is a definition of code that will execute the lines of code inside the definition wherever the function is referenced.
+    </h4>
+
+    <pre class="border border-white">
+    var name = "Cameron";
+    
+    var printName = function(){
+        document.write('&lt;h1&gt;' + name + '&lt;/h1&gt;');
+    };
+
+    printName();
+    
+    name = "Larry";
+    
+    printName();
+    
+    </pre>
+
+    <h4>
+        <a href="examples/example-3.html" target="_blank">Example 3</a>
+    </h4>
+
+    <h4>
+        Although there are only a few basic data types we can store many different types of values into variables.
+        <br>
+        <br>
+        As you can see above I stored the function I created into a variable so that I can reuse it.
+        <br>
+        <br>
+        In other programming languages functions are not declared like this so that might be confusing if you are familiar with another language.
+        <br>
+        <br>
+        When the function is created the code inside the function will not execute until you invoke it by referencing the variable and adding a pair of parentheses.
+        <br>
+        <br>
+        Without the parentheses the code will not execute.
+    </h4>
+
+    <hr>
+
+    <h2>
+        Arrays
+    </h2>
+
+    <h4>
+        What if you wanted to create a bunch of names? You could make a bunch of variables
+        called name1, name2, name3, etc. This would be time consuming though and if more names needed to be stored then you would have to edit the code again.
+        <br>
+        <br>
+        A solution to this is to use Arrays which are lists and creating one is easy. Just declare a variable like before but set the value as a pair of brackets.
+        <br>
+        <br>
+        This will create an empty list but, you can also create a list that has some data already in it but using curly braces.
+        <br>
+        <br>
+        You can add content to the array by referencing the variable and adding .push() to the end with whatever you want to put in the array being placed inside the parentheses, but this isn't anything we need for right now.
+        <br>
+        <br>
+        If you want to access items out of the array you add brackets after the variable and put the index of the item you want to access inside. FYI... Indexes start at 0 instead of 1
+        <br>
+        <br>
+        You can also get the size of the array by appending .length to the variable
+    </h4>
+
+    <pre class="border border-white">
+    var names = [];
+    var cars = ["nissan","volvo","tesla"];
+    
+    names.push("Cameron");
+    names.push("Larry");
+    
+    //Write nissan
+    document.write('&lt;h1&gt;' + cars[0] + '&lt;/h1&gt;');
+    
+    //Write volvo
+    document.write('&lt;h1&gt;' + cars[1] + '&lt;/h1&gt;');
+    
+    //Write tesla
+    document.write('&lt;h1&gt;' + cars[2] + '&lt;/h1&gt;');
+    
+    //Should print out "There are: 3 cars"
+    document.write('&lt;h1&gt; There are: ' + cars.length + ' cars&lt;/h1&gt;');
+    </pre>
+
+    <h4>
+        If you wanted to get a random value out of the list you could store the random number into a variable and use that when accessing the array.
+    </h4>
+
+    <pre class="border border-white">
+    var cars = ["nissan","volvo","tesla"];
+    var randomIndex = Math.floor(Math.random() * cars.length);
+    
+    document.write('&lt;h1&gt;' + cars[randomIndex] + '&lt;/h1&gt;');
+    </pre>
+
+    <h4>
+        Math.random() returns a random float between 0 and 1 so we have to multiply that by the max number of values there can be. We then round the number down so that it will return 0, 1, or 2 when we say 3.
+    </h4>
+
+
+    <hr>
+
+    <h2>
+        Class Excercise
+    </h2>
+
+    <h4>
+
+    </h4>
+
+    <hr>
+
+    <h2>
+        Assignment 7
+    </h2>
+
+    <br>
+
+    <h4>
+        For this week's assignment you will be making a randomly generated story.
+        <br>
+        <br>
+        You will make a web page that has a story, but you must replace certain parts such as various nouns or verbs with a small amount of Javascript to randomly pick something to put in that space i.e "The ___ jumped over the moon" where the first time the page loads it might say "The cow jumped over the moon" and the second time the page loads it might say "The cat jumped over the moon".
+    </h4>
+
+
+    <br>
+
+    <h2>
+        Readings Due Next Week
+    </h2>
+
+    <hr>
+    <h4>
+        None :)
+    </h4>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+</body></html>

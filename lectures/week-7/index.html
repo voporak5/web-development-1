@@ -347,7 +347,35 @@
         <br>
         <br>
         Without the parentheses the code will not execute.
+        <br>
+        <br>
+        You can also pass information into the function by declaring variables inside the function declaration like this.
     </h4>
+
+    <pre class="border border-white">
+
+    var printName = function(name){
+        document.write('&lt;h1&gt;' + name + '&lt;/h1&gt;');
+    };
+
+    printName("Larry");
+    printName("Jim");
+    
+    </pre>
+
+    <h4>
+        You can have specify up to 255 arguments in a function in Javascript. In C# (depending on the version) you can specify up to 16.
+    </h4>
+
+    <pre class="border border-white">
+
+    var printLocation = function(street, number, city, state, zip){
+        document.write('&lt;h1&gt; Address:' + street + number + city + state + zip +'&lt;/h1&gt;');
+    };
+
+    printName("South Wabash",600,Chicago,Il,60010);
+    
+    </pre>
 
     <hr>
 
@@ -418,7 +446,38 @@
     </h2>
 
     <h4>
-
+        Practice using Javascript by creating a webpage that shows the following content.
+        <br>
+        <br>
+        What is 9 + 8?
+        <br>
+        Answer: 17
+        <br>
+        <br>
+        What is 132 + 50?
+        <br>
+        Answer: 182
+        <br>
+        <br>
+        What is 9 / 8?
+        <br>
+        Answer: 1.125
+        <br>
+        <br>
+        What is 9 x 8?
+        <br>
+        Answer: 72
+        <br>
+        <br>
+        What is 9 - 8?
+        <br>
+        Answer: 1
+        <br>
+        <br>
+        Make some functions to help you out!
+        <br>
+        <br>
+        You may only write content to the page using document.write() and the answers have to be calculated using Javascript.
     </h4>
 
     <hr>

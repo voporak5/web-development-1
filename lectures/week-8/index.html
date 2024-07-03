@@ -20,6 +20,7 @@
         fetch('../nav.html')
             .then(response => response.text())
             .then(text => document.getElementById('#nav').innerHTML = text);
+
     </script>
 
     <h1 class="row justify-content-center" style="padding-top: 100px;">
@@ -96,8 +97,8 @@
 
     <pre class="border border-white">
 &lt;body&gt;
-    &lt;h1&gt;Hello&lt;/h1&gt;
     &lt;script src="scripts/example.js"&gt;&lt;/script&gt;
+    &lt;h1&gt;Hello&lt;/h1&gt;    
 &lt;/body&gt
     </pre>
 
@@ -225,7 +226,29 @@
     </h2>
 
     <h4>
-        Reading query params
+        Consider the following scenario...
+        <br>
+        <br>
+        You have created a quiz and want to present the results of the quiz on a separate webpage. You build the quiz usings a &lt;form&gt; which will append the results as a part of the query parameters of the URL where the results page is located (https://www.mywebsite.com/results?answer1=taco&answer2=fish).
+        <br>
+        <br>
+        With plain HTML it's impossible to do anything based on information in the URL however, reading the data is really easy with JS.
+        <br>
+        <br>
+        Simply use the below code.
+    </h4>
+
+    <pre class="border border-white">
+var urlParams = new URLSearchParams(window.location.search);
+var answer1 = urlParams.get('answer1');
+var answer2 = urlParams.get('answer2');
+    </pre>
+
+    <h4>
+        Here's a challenge.
+        <br>
+        <br>
+        Write a quick webpage that will change the background color of a website based on the information specified in the query (https://www.mywebsite.com?color=red)
     </h4>
 
     <hr>
@@ -235,8 +258,116 @@
     </h2>
 
     <h4>
-        If statements
+        What IF you want different things to happen based on the values of the data?
+        <br>
+        Simply put we use 3 keywords to help us out with this: if, elseif, and else.
+        <br>
+        <br>
+        Whenever you use an if statement you need to type a set of parenthese where you will specify the conditions that need to be met in order for the code that will be executed to execute for the conditions.
+        <br>
+        <br>
+        The same is true for typing elseif.
+        <br>
+        <br>
+        You do not need to specify conditions when typing else because that is the fallthrough condition should all over conditions fail to be met.
+        <br>
+        <br>
+        You essentially create a chain of checks that begin with if....can be extended with elseif....and can finish with else.
+        <br>
+        <br>
+        You are not required to use them all however, the first check should always use the if keyword.
+        <br>
+        <br>
+        You can have as many if/elseif/else chains as you want in your code. Double check if you are using the correct keyword as well. If you only use if then every single block of code has the potential to execute.
     </h4>
+
+    <pre class="border border-white">
+var urlParams = new URLSearchParams(window.location.search);
+var answer1 = urlParams.get('answer1');
+var answer2 = urlParams.get('answer2');
+
+if(answer1 == "taco"){
+    document.write('&lt;h4&gt; The answer is correct! &lt;/h4&gt;');
+}
+elseif(answer1 == "hamburger"){
+    document.write('&lt;h4&gt; Close but no cigar :( &lt;/h4&gt;');
+}
+else {
+    document.write('&lt;h4&gt; You fail! &lt;/h4&gt;');
+}
+    </pre>
+
+    <h4>
+        When comparing equivalency you must use a double set of = signs like this ==. This is to differentiate in the code assigning a value to a variable from checking to see if the value is equal to something else.
+        <br>
+        <br>
+        Additionally you can put as many conditional checks in a single statement as you like using the following operators: &amp;&amp; and ||.
+        <br>
+        <br>
+        &amp;&amp; (and) is used to say both of these 2 separate conditions have to be met in order for the code to execute.
+        <br>
+        <br>
+        || (or) is used to say either one of these conditions can be met for the code to execute.
+        <br>
+        <br>
+        You can chain as many conditions in a statement as you want, you are not limited to 2.
+    </h4>
+
+    <pre class="border border-white">
+var urlParams = new URLSearchParams(window.location.search);
+var answer1 = urlParams.get('answer1');
+var answer2 = urlParams.get('answer2');
+
+if(answer1 == "taco" &amp;&amp; answer2 == "fish"){
+    document.write('&lt;h4&gt; You received 100%! &lt;/h4&gt;');
+}
+elseif(answer1 == "taco" || answer2 == "fish"){
+    document.write('&lt;h4&gt; You received 50% :| &lt;/h4&gt;');
+}
+else {
+    document.write('&lt;h4&gt; You fail! :( &lt;/h4&gt;');
+}
+    </pre>
+
+    <h4>
+        Additionally, it may help you to wrap conditions with parentheses if your conditions make use of both operators to ensure the logic is processed in the correct order just like in math when you wrap logic with parentheses to specify which operations need to happen first.
+        <br>
+        <br>
+        Look at the below examples. If we don't include the parentheses then which way do you think the web browser is going to interpret what you were trying to write?
+    </h4>
+
+    <pre class="border border-white">
+var urlParams = new URLSearchParams(window.location.search);
+var answer1 = urlParams.get('answer1');
+var answer2 = urlParams.get('answer2');
+var answer3 = urlParams.get('answer3');
+
+if((answer1 == "taco" &amp;&amp; answer2 == "fish") || answer3 == "sandwich"){
+    
+}
+
+if(answer1 == "taco" &amp;&amp; (answer2 == "fish" || answer3 == "sandwich"){
+    
+}
+    </pre>
+
+    <h4>
+        There are others things we can check such as not equivalent (!=), greater than(&gt;), greater or equal to(&gt;=), less than(&lt;), less than or equal to (&lt;=). The greater than or less than checks are only useful for numerical comparisons.
+    </h4>
+
+    <pre class="border border-white">
+var grade = 96;
+
+if(grade == 100){
+    document.write('&lt;h4&gt; Your grade: A++! &lt;/h4&gt;');
+}
+elseif(grade >= 93){
+    document.write('&lt;h4&gt; Your grade: A! &lt;/h4&gt;');
+}
+else{
+    document.write('&lt;h4&gt; No A for you! &lt;/h4&gt;');
+}
+    </pre>
 
     <hr>
 
@@ -264,7 +395,7 @@
     <h4>
         Chapter 7 HTML & CSS Jon Duckett
         <br>
-        Chapter 4 Javascript & JQuery Jon Duckett
+        Chapter 4 Pages 146-169 Javascript & JQuery Jon Duckett
     </h4>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -274,4 +405,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 
-</body></html>
+</body>
+
+</html>

@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../../favicon.jpg">
+    <title>Week 9</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../../styles/styles.css">
+</head>
+
+<body class="container">
+
+    <div id="#nav"></div>
+
+    <script>
+        fetch('../nav.html')
+            .then(response => response.text())
+            .then(text => document.getElementById('#nav').innerHTML = text);
+    </script>
+
+    <h1 class="row justify-content-center" style="padding-top: 100px;">
+        Week 9
+    </h1>
+
+    <h4 class="row justify-content-center">
+        Loops and the Document Object Model (DOM)
+    </h4>
+
+    <h2>
+        Agenda
+    </h2>
+
+    <ul class="list-group">
+        <li class="list-group-item">Review Homework and Issues</li>
+        <li class="list-group-item">Quiz 6</li>
+        <li class="list-group-item">Loops</li>
+        <li class="list-group-item">DOM</li>
+        <li class="list-group-item">Questions?</li>
+        <li class="list-group-item">Class Time To Work</li>
+    </ul>
+
+    <br>
+
+    <hr>
+
+    <h2>
+        Loops
+    </h2>
+
+    <h4>
+        Consider a scenario in which you have to build a website that populates an ever growing list of content on a webpage such as your social media wall (Facebook, Instagram, X, etc.) with posts from other user. It's not realistic to manually type all of the HTML or make all of the JS function calls because you'd have to go change the content every time and the content might be different for each person who visits the site.
+        <br>
+        <br>
+        The realistic solution is to use a programming loop, or in other words some lines of code that will repeatedly run until a set of conditions are met that will break the loop.
+        <br>
+        <br>
+        Conditions can be as simple as run 10 times or as dynamic as keep running until there is no more new content to show to the user.
+    </h4>
+
+    <br>
+
+    <h2>
+        Types of Loops
+    </h2>
+
+
+    <h4>
+        There are 3 main types of loops that you will encounter
+
+        <ul>
+            <li>
+                for loops
+            </li>
+            <li>
+                while loops
+            </li>
+            <li>
+                do while loops
+            </li>
+        </ul>
+    </h4>
+
+    <h3>
+        For Loops
+    </h3>
+
+    <h4>
+        To begin writing the for loop you must use the keyword "for" followed by a set of parentheses. After the parentheses ( ) you need a set of curlybraces { }.
+        <br>
+        <br>
+        The code you want to execute each iteration of the loop must go inside the curlybraces.
+        <br>
+        <br>
+        The conditions for how many times the loop must execute go inside the parentheses.
+        <br>
+        <br>
+        With the for loop we must specify 3 parts in the conditions: a variable that represents a counter, the condition for terminating the loop, and a method for incrementing the counter.
+        <br>
+        <br>
+        Each of these parts must be separated by a semicolon.
+        <br>
+        <br>
+        As you can see below I have created a variable called i which is shorthand for index. I then said that the loop can only run if i is less than 10. Finally I stated that at the end of the loop we will increment i by 1. Specifying++ is shorthand for saying add 1. I could also say i += 1 or if I wanted it to increase more I could say i += 2.
+        <br>
+        <br>
+        You don't have to call your variable i but you will see i used very often.
+    </h4>
+
+    <pre class="border border-white">
+for(var i = 0; i &lt; 10; i++){
+    document.write('&lt;h4&gt;hi&lt;/h4&gt;');
+    document.write('&lt;h4&gt; this is loop: ' + i + '&lt;/h4&gt;');
+}
+    </pre>
+
+    <br>
+
+    <h3>
+        While Loops
+    </h3>
+
+    <h4>
+        While loops are similar to for loops but the only difference is that they use the keyword "while" and the only thing that goes inside the parentheses are the conditions for terminating the loop.
+        <br>
+        <br>
+    </h4>
+
+    <pre class="border border-white">
+var isGameRunning = true;
+    
+while(isGameRunning == true){
+    spawnEnemy();
+}
+    </pre>
+
+    <h4>
+        If you wanted to you could use a while loop exactly like a for loop. You would have to create the variable outside of the loop and manage incrementing the value inside of the loop.
+        <br>
+        <br>
+    </h4>
+
+    <pre class="border border-white">
+var enemiesSpawned = 0;
+    
+while(iterations &lt; 10){
+    spawnEnemy();
+    enemiesSpawned++;
+}
+    </pre>
+
+    <h3>
+        Do While Loops
+    </h3>
+
+    <h4>
+        These are very similar to while loops however, it must be said that a for loop and a while loop will not run if the conditions to terminate the loop are already met by the time the loop begins to run because a do while loop will always guarantee 1 iteration of the code executing before checking to see if the conditions to terminate the loop are met.
+        <br>
+        <br>
+        It also looks slightly different in that the keyword "do" is used but instead of a set of parentheses following it the curly braces are immediately placed and at the end the "while" keyword is added along with the parentheses that hold the conditions for terminating the loop.
+    </h4>
+
+    <pre class="border border-white">
+var lives = 3;
+    
+do{
+    dealDamage();
+    lives--;
+}while(lives > 0)
+    </pre>
+
+
+
+    <hr>
+
+    <h2>
+        Document Object Model (DOM)
+    </h2>
+
+    <h4>
+    </h4>
+
+    <hr>
+
+    <h2>
+        Class Excercise
+    </h2>
+
+    <h4>
+        Create a page that will populate a bunch of random shapes using loops.
+        Create several buttons that will add different shapes.
+        Create some buttons that will hide all shapes of a particular type such as squares, circles, etc.
+        Create several buttons that will also remove the most recently added shape for each shape type.
+    </h4>
+
+    <hr>
+
+    <h2>
+        Assignment 9
+    </h2>
+
+    <br>
+
+    <h4>
+        For this week's assignment you need to create a very simple webpage that will have an input field to allow a user to enter in a number. You will need to have a button that says "Enter"
+        <br>
+        <br>
+        When the "Enter" button is pressed then the value of the input field will be stored in an array and cleared out of the input field.
+        <br>
+        <br>
+        There will be another button that says "Get Total" which when pressed will loop through the values in the array and calculate the total value of all numbers that have been entered by the user and present the total value to the user.
+    </h4>
+
+
+    <br>
+
+    <h2>
+        Readings Due Next Week
+    </h2>
+
+    <hr>
+    <h4>
+        Chapter 4 Pages 170-182 Javascript & JQuery Jon Duckett
+        <br>
+        Chapter 5 Javascript & JQuery Jon Duckett
+    </h4>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+</body></html>

@@ -1,0 +1,219 @@
+body {
+    padding-top: 56px;
+    padding-bottom: 56px;
+        }
+
+.navbar {
+        background-color: #bad0ff;
+     font-family: 'Abril Fatface', serif;
+    }
+
+    .navbar-nav a {
+        color: #020052 !important; 
+        background-color: #b79fd9;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+.navbar-nav a:hover {
+        color: white !important;
+    background-color: #73648a;
+    }
+
+.navbar-toggler-icon {
+        background-color: #73648a;
+    }
+.navbar-dark .navbar-nav .nav-link.active-custom {
+    background-color: #abd895;
+}
+
+.dotted-line {
+    border-bottom: 10px dotted #73648a;
+    margin-top: 45px;
+    margin-bottom: 25px;
+}
+.dotted-line-bottom {
+    border-top: 10px dotted #73648a;
+}
+
+.jumbotron {
+            background-color: #abd895;
+        }
+
+.copyright {
+            position: fixed;
+            bottom: 0;
+            left: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+.social-links {
+            position: fixed;
+            bottom: 0;
+            right: 10px;
+        }
+.display-4 {
+    font-family: 'Abril Fatface', serif;
+    font-size: 75px;
+    color: #020052
+}
+.lead {
+    font-family: Arial, Helvetica, sans-serif ;
+    color: #020052;
+    font-size: 25px
+}
+.button {
+  border: none;
+  color: #020052;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+    margin-bottom: 20px
+}
+
+.button1 {
+  background-color: #020052; 
+  color: white; 
+    border-radius: 10px;
+    transition: background-color 0.3s, color 0.3s;
+  
+}
+
+.button1:hover {
+  background-color: #bad0ff;
+  color: 020052;
+}
+h1, h2, h3, h4 {
+    font-family: 'Abril Fatface', serif;
+    color: #020052
+}
+p {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.portfolio {
+    margin-top: 20px !important;
+    text-align: center; 
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important; 
+    gap: 10px !important;
+}
+
+.portfolio a {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.portfolio img {
+    width: 100% !important; 
+    max-width: 400px !important;
+    height: auto !important; 
+    margin: 10px !important;
+}
+
+@media (max-width: 768px) {
+    .portfolio {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)) !important; /* Responsive columns */
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .portfolio {
+        padding-left: 250px !important;
+        padding-right: 250px !important;
+    }
+}
+        .container {
+    margin-top: 50px;
+}
+
+        .contact-container .row {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .contact-info {
+            width: 45%;
+        }
+
+        .contact-form {
+            width: 45%;
+            background-color: #abd895;
+            padding: 20px;
+            border-radius: 10px;
+            color: #020052;
+        }
+
+        .contact-form form {
+            color: #020052; 
+        }
+
+        .contact-form button {
+            background-color: #020052; 
+            color: white; 
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .contact-form button:hover {
+            background-color: #bad0ff;
+            color: #020052; 
+        }
+.container {
+    margin-top: 50px;
+}
+
+.contact-info,
+.contact-form {
+    width: 100%;
+}
+
+.row.justify-content-center {
+    margin-top: 20px;
+}
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto; 
+}
+.card-body {
+    background-color: #abd895;
+}
+.card-text {
+    color: #020052;
+        font-family: Arial, Helvetica, sans-serif ;
+}
+.card-title {
+    color: #020052;
+      font-family: 'Abril Fatface', serif;
+}
+  .btn-primary {
+            background-color: #020052;
+            border-color: white;
+  transition: background-color 0.3s, color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #bad0ff;
+            border-color: white;
+            color: #020052;
+        }
+.col-md-6 {
+    display: block !important;
+}
+  .category-link {
+            background-color: #020052; 
+            color: #ffffff; 
+         transition: background-color 0.3s, color 0.3s;
+        }
+
+        .category-link:hover {
+            background-color: #bad0ff;
+            color: #020052; 
+}

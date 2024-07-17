@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
+
+.Home {
+    background-image: url(images/Star-wars-back.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+
+.ABT {
+    background-image: url(images/Vader.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+
+.Items {
+    background-image: url(images/MANDO\ \(1\).png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.Info{
+    background-image: url(images/BLANCO.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.Spots {
+    background-image: url(images/Falcon.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.Trilogy {
+    background-image: url(images/XWING.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.Series {
+    background-image: url(images/DEAD.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+}
+
+.bar {
+    background: white;
+    height: 65px;
+    width: 116.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.Sub-Bar {
+    float: left;
+}
+
+.Sub-Bar ul {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.Sub-Bar ul li {
+    display: inline-block;
+    width: 5rem;
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+footer {
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+    font-family: 'Smooch Sans', sans-serif;
+    font-size: 1.5rem;
+    outline: 10px solid #E6CB05;
+}
+
+
+.footer-container {
+
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.Sub-Bar ul li a {
+    /* padding: 25px; */
+    line-height: 2rem;
+    color: black;
+    text-decoration: none;
+    transition: 0.6;
+    font-family: 'Smooch Sans', sans-serif;
+    font-size: 2rem;
+}
+
+.Sub-Bar li:hover {
+    background: #E6CB05;
+
+
+}
+
+.TT {
+    color: rgb(255, 255, 255);
+    font-size: 3rem;
+    display: flex;
+    place-content: center;
+    font-family: 'Oswald', sans-serif;
+}
+.RR {
+    color: rgb(0, 0, 0);
+    font-size: 3rem;
+    display: flex;
+    place-content: center;
+    font-family: 'Smooch Sans', sans-serif;
+}
+.YY {
+    color: #16E7E4;
+    font-size: 3rem;
+    display: flex;
+    place-content: center;
+    font-family: 'Oswald', sans-serif;
+}
+
+.TT2 {
+    color: white;
+    font-size: 3rem;
+    display: flex;
+    place-content: center;
+    font-family: 'Oswald', sans-serif;
+}
+
+.PP {
+    display: flex;
+    place-content: center;
+    color: white;
+    margin-left: 600px;
+    margin-right: 600px;
+    font-size: 3.5rem;
+    color: #E6CB05;
+    font-family: 'Oswald', sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+#WH {
+    display: flex;
+    place-items: center;
+    color: white;
+    margin-left: 500px;
+    margin-right: 500px;
+    font-family: 'Oswald', sans-serif;
+    font-size: larger;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+}
+
+.mov {
+    margin-top: 50px;
+    width: 200px;
+    margin-bottom: 100px;
+    margin-left: 90px;
+}
+
+.Block {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.SS {
+    font-family: 'Nova Square', sans-serif;
+    color: white;
+    font-size: larger;
+    background-color: gray;
+    border-radius: 10%;
+}
+
+#video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.PotCont {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.PotImg {
+    display: flex;
+    justify-content: center;
+
+}
+
+.texto {
+    float: right;
+    display: flex;
+    font-family: 'Nova Square', sans-serif;
+    color: white;
+    font-size: medium;
+}
+
+.PotCont2 {
+    margin-top: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.white {
+    background-color: white;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+
+.carousel {
+    width: 100%;
+    height: 55rem;
+    position: relative;
+
+}
+
+.carousel>ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+
+.slide {
+    position: absolute;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    justify-items: center;
+    inset: 0;
+    opacity: 0;
+    transition: 200ms opacity ease-in-out;
+    transition-delay: 200ms;
+}
+
+.slide>img {
+    display: block;
+    width: 35rem;
+    object-fit: cover;
+    object-position: center;
+}
+
+.slide[data-active] {
+    opacity: 1;
+    z-index: 1;
+    transition-delay: 0ms;
+}
+
+.carousel-button {
+
+    position: absolute;
+    z-index: 2;
+    background: none;
+    border: none;
+    font-size: 4rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, .5);
+    cursor: pointer;
+    border-radius: .25rem;
+    padding: 0 .5rem;
+    background-color: rgba(0, 0, 0, .1);
+}
+
+.carousel-button:hover,
+.carousel-button:focus {
+    color: white;
+    background-color: rgba(0, 0, 0, .2);
+}
+
+.carousel-button:focus {
+    outline: 1px solid black;
+}
+
+.carousel-button.prev {
+    left: 1rem;
+}
+
+.carousel-button.next {
+    right: 1rem;
+}
+.Socials{
+    text-decoration: none;
+    color: #000000;
+}
+.active{
+    background: #E6CB05;
+}
+.ME{
+    display: flex;
+    justify-content: center;
+}
+.ME2{
+    border-radius: 100%;
+}

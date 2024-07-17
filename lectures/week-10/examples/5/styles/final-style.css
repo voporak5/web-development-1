@@ -1,0 +1,118 @@
+p.margin {
+	margin: 200px
+}
+
+p.inline {
+	display: inline;
+}
+
+p {
+	font-size: 20px;
+	color: white;
+	text-align: center;
+}
+
+ul {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 35%;
+  border: 1px solid;
+  background-color: #ffb3fa;
+}
+
+div {
+	align-items: center;
+
+}
+
+.container {
+  outline: dashed 1px white;
+  background: rgba(0, 0, 0, 0.3);
+  width: 70%;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  }
+
+.buttons {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+	
+}
+
+
+.nav{
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  outline: solid 5px black;
+  background: rgba(0, 155, 255, 0.1);
+	
+
+	
+}
+img {
+}
+
+li {
+ 
+}
+
+/* Change the link color on hover */
+li a:hover {
+  color: white;
+}
+
+.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+h1 {
+	color:#a952e3;
+	text-align: center;
+
+
+}
+
+h3 {
+	color:red;
+}
+
+h2 {
+	color:Fuchsia;
+	text-align: right;
+}
+
+body {
+	font-family: Helvetica;
+	color:  #3CBC8D;
+ background: rgb(9,9,77);
+background: linear-gradient(90deg, rgba(9,9,77,1) 0%, rgba(24,25,26,1) 100%); }
+
+button {
+	font-family: Helvetica;
+	color:  #3CBC8D;
+	background-color: #18191A;
+	color: green;
+	text-align: center;
+	text-decoration: none;
+	font-size: 16px;
+	margin-right: 50px;
+
+
+	
+}
+
+
+input {
+	font-family: serif;
+	border-color: purple;
+	backgrounds-color: #3CBC8D;
+  color: blue;
+}
